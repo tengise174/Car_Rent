@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    width: 100%;
 }
 
 header {
@@ -13,6 +18,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 24px; /* Size of the hamburger icon */
+    cursor: pointer; /* Change cursor to pointer */
 }
 
 header nav ul {
@@ -34,10 +49,15 @@ header nav ul li a:hover {
 }
 
 .header-search {
-    height: 30rem;
-    border: 1px solid;
+    width: 100%;
+    height: 500px;
     background-image: url(../img/img1.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 5rem;
 }
+
 .header-search > h2 {
     display: none;
 }
@@ -46,10 +66,9 @@ header nav ul li a:hover {
     display: flex;
     width: 80%;
     background-color: white;
-    padding: 0rem 1rem 0 2rem;
+    padding: 0.5rem 1rem 0 2rem;
     border-radius: 2rem;
     margin: auto;
-    margin-top: 5rem;
 }
 
 .header-search form div {
@@ -59,25 +78,32 @@ header nav ul li a:hover {
     align-items: center;
 }
 
-.header-search form fieldset {
+.header-search form div fieldset {
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: end;
     flex: 1;
     position: relative;
-    margin: 5px;
-    padding: 1rem;
     border: none;
     border-right: 1px solid;
 }
 
 
-.header-search form fieldset label {
-    position: absolute; 
-    width: 1px;        
-    height: 1px;      
-    padding: 0;       
-    margin: 0;         
-    overflow: hidden;  
-    clip: rect(0, 0, 0, 0); 
-    border: 0;         
+.header-search form div fieldset label {
+    display: none;      
+}
+
+.header-search form div fieldset input {
+    border: none;
+    border-bottom: 1px solid;   
+    margin-left: 1rem;
+    width: 40%;
+}
+
+.header-search form div fieldset > input {
+    width: 80%;
 }
 
 .search-button {
@@ -99,6 +125,9 @@ header nav ul li a:hover {
     width: 70%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid;
 }
 
 .about-us h2,
@@ -108,6 +137,47 @@ header nav ul li a:hover {
 }
 
 
+.about-us details,
+.questions details {
+    border-top: 1px solid;
+}
+
+.about-us details summary,
+.questions details summary{
+    list-style: none;
+}
 
 
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide nav by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position the menu */
+        top: 60px; /* Adjust based on header height */
+        right: 0;
+        background-color: #333; /* Match the header background */
+        width: 100%; /* Full width */
+    }
+
+    nav.active {
+        display: flex; /* Show nav when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    /* Show the menu when checkbox is checked */
+    .menu-toggle:checked + .hamburger + #navbar {
+        display: flex; /* Show nav when checkbox is checked */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    nav li {
+        margin: 10px 0; /* Space between stacked links */
+    }
+}
 
