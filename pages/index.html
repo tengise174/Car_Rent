@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover good vehicle rental platform. Search for cars by location and dates">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Home</title>
 </head>
 
@@ -23,36 +25,40 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="header-search">
             <h2>Хайх</h2>
             <form action="search.html" method="get">
-                <fieldset>
-                    <legend>Location</legend>
-                    <label for="location">Байршил</label>
-                    <input type="text" id="location" placeholder="Location">
-                </fieldset>
+                <div>
+                    <fieldset>
+                        <legend>Location</legend>
+                        <label for="location">Байршил</label>
+                        <input type="text" id="location" placeholder="Location">
+                    </fieldset>
 
-                <fieldset>
-                    <legend>Start</legend>
-                    <label for="start-date">Эхлэх өдөр</label>
-                    <input type="date" id="start-date">
+                    <fieldset>
+                        <legend>Start</legend>
+                        <label for="start-date">Эхлэх өдөр</label>
+                        <input type="date" id="start-date">
 
-                    <label for="start-time">Эхлэх цаг</label>
-                    <input type="time" id="start-time">
-                </fieldset>
+                        <label for="start-time">Эхлэх цаг</label>
+                        <input type="time" id="start-time">
+                    </fieldset>
 
-                <fieldset>
-                    <legend>End</legend>
-                    <label for="end-date">Дуусах өдөр</label>
-                    <input type="date" id="end-date">
+                    <fieldset>
+                        <legend>End</legend>
+                        <label for="end-date">Дуусах өдөр</label>
+                        <input type="date" id="end-date">
 
-                    <label for="end-time">Дуусах цаг</label>
-                    <input type="time" id="end-time">
-                </fieldset>
+                        <label for="end-time">Дуусах цаг</label>
+                        <input type="time" id="end-time">
+                    </fieldset>
+                </div>
+                <button class="search-button" type="submit">
+                    <span>Search</span>
+                    <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </button>
 
-                <button type="submit">Search</button>
             </form>
-            <img src="image-placeholder.jpg" alt="Vehicle Image">
         </section>
 
         <section class="about-us">
