@@ -20,16 +20,6 @@ header {
     align-items: center;
 }
 
-.menu-toggle {
-    display: none; /* Hide the checkbox */
-}
-
-.hamburger {
-    display: none; /* Hidden by default */
-    font-size: 24px; /* Size of the hamburger icon */
-    cursor: pointer; /* Change cursor to pointer */
-}
-
 header nav ul {
     display: flex;
     flex-direction: row;
@@ -148,36 +138,4 @@ header nav ul li a:hover {
 }
 
 
-@media (max-width: 768px) {
-    nav {
-        display: none; /* Hide nav by default on mobile */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position the menu */
-        top: 60px; /* Adjust based on header height */
-        right: 0;
-        background-color: #333; /* Match the header background */
-        width: 100%; /* Full width */
-    }
-
-    nav.active {
-        display: flex; /* Show nav when active */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger icon on mobile */
-    }
-
-    /* Show the menu when checkbox is checked */
-    .menu-toggle:checked + .hamburger + #navbar {
-        display: flex; /* Show nav when checkbox is checked */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack links vertically */
-    }
-
-    nav li {
-        margin: 10px 0; /* Space between stacked links */
-    }
-}
 
