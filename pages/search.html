@@ -16,7 +16,6 @@
         <nav>
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./privacy.html">Privacy</a></li>
                 <li><a href="./wishlist.html">Shopping Cart</a></li>
                 <li><a href="./login.html">Log In</a></li>
             </ul>
@@ -27,83 +26,58 @@
         <section class="search-filter">
             <h2>Хайх</h2>
             <form>
-                <fieldset>
-                    <legend>Location</legend>
-                    <label for="location">Байршил</label>
-                    <input type="text" id="location" placeholder="Location">
-                </fieldset>
+                <label for="location">Байршил</label>
+                <input type="text" id="location" placeholder="Location">
 
-                <fieldset>
-                    <legend>Start</legend>
-                    <label for="start-date">Эхлэх өдөр</label>
-                    <input type="date" id="start-date">
+                <label for="start-date">Эхлэх</label>
+                <input type="datetime-local" id="start-date">
 
-                    <label for="start-time">Эхлэх цаг</label>
-                    <input type="time" id="start-time">
-                </fieldset>
+                <label for="end-date">Дуусах</label>
+                <input type="datetime-local" id="end-date">
 
-                <fieldset>
-                    <legend>End</legend>
-                    <label for="end-date">Дуусах өдөр</label>
-                    <input type="date" id="end-date">
 
-                    <label for="end-time">Дуусах цаг</label>
-                    <input type="time" id="end-time">
-                </fieldset>
+                <label for="price">Үнэ</label>
+                <select id="price">
+                    <option>All</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
 
-                <fieldset>
-                    <legend>Price</legend>
-                    <label for="price">Үнэ</label>
-                    <select id="price">
-                        <option>All</option>
-                        <option>Low</option>
-                        <option>Medium</option>
-                        <option>High</option>
-                    </select>
-                </fieldset>
 
-                <fieldset>
-                    <legend>Type</legend>
-                    <label for="type">Төрөл</label>
-                    <select id="type">
-                        <option>All</option>
-                        <option>SUV</option>
-                        <option>Sedan</option>
-                        <option>Truck</option>
-                    </select>
-                </fieldset>
 
-                <fieldset>
-                    <legend>Transmission</legend>
-                    <label for="transmission">Хурдны хайрцаг</label>
-                    <select id="transmission">
-                        <option>All</option>
-                        <option>Automatic</option>
-                        <option>Manual</option>
-                    </select>
-                </fieldset>
+                <label for="type">Төрөл</label>
+                <select id="type">
+                    <option>All</option>
+                    <option>SUV</option>
+                    <option>Sedan</option>
+                    <option>Truck</option>
+                </select>
 
-                <fieldset>
-                    <legend>Passengers</legend>
-                    <label for="passenger">Суудлын тоо</label>
-                    <select id="passenger">
-                        <option>All</option>
-                        <option>4</option>
-                        <option>6</option>
-                        <option>8</option>
-                    </select>
-                </fieldset>
 
-                <fieldset>
-                    <legend>Make</legend>
-                    <label for="make">Марк</label>
-                    <select id="make">
-                        <option>All</option>
-                        <option>Jeep</option>
-                        <option>Toyota</option>
-                        <option>Ford</option>
-                    </select>
-                </fieldset>
+                <label for="transmission">Хурдны хайрцаг</label>
+                <select id="transmission">
+                    <option>All</option>
+                    <option>Automatic</option>
+                    <option>Manual</option>
+                </select>
+
+
+                <label for="passenger">Суудлын тоо</label>
+                <select id="passenger">
+                    <option>All</option>
+                    <option>4</option>
+                    <option>6</option>
+                    <option>8</option>
+                </select>
+
+                <label for="make">Марк</label>
+                <select id="make">
+                    <option>All</option>
+                    <option>Jeep</option>
+                    <option>Toyota</option>
+                    <option>Ford</option>
+                </select>
 
                 <button type="submit">Search</button>
             </form>
