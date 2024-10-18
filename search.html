@@ -14,14 +14,17 @@
 <body>
 
     <header>
-        <img src="./assets/img/logo.png" alt="logo">
-        <nav>
+        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
+        <input type="checkbox" id="check" aria-label="Toggle menu"> 
+        <nav class="menu">
             <ul>
                 <li class="active-page"><a href="./index.html">Home</a></li>
                 <li><a href="./wishlist.html">Shopping Cart</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <li><a href="./login.html">Log In</a></li> 
             </ul>
+            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </header>
 
     <main>
