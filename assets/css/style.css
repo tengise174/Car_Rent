@@ -1,189 +1,58 @@
-:root {
-    --main-color: black;
-    --hover-color: #1E90FF;
-    --active-color: blue;
-    --text-color: white;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-    align-items: center;
-    background-color: var(--main-color);
-    padding: 0 3rem;
-}
-
-.open-menu, .close-menu {
-    position: absolute;
-    color: white;
-    cursor: pointer;
-    display: none;
-}
-
-.open-menu {
-    right: 1.5rem;
-}
-
-.close-menu {
-    top: 2rem;
-    right: 2rem;
-}
-
-#check {display: none;}
-
-.logo-img {
-    width: 20rem;
-    height: auto;
-    max-width: 100%;
-}
-
-header nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    list-style: none;
-}
-
-header nav ul li a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.active-page {
-    padding: 0.6rem;
-    border: solid 1px white;
-    border-radius: 0.6rem;
-    background-color: var(--active-color);
-}
-
-header nav ul li a:hover {
-    border-bottom: solid 2px;
-    color: var(--hover-color);
-}
-
-footer {
+#header-search {
+    height: 20rem;
+    background-image: url(../img/img1.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-color);
-    background-color: var(--main-color);
-    padding: 1rem 0;
-    gap: 1rem;
-    justify-content: space-evenly;
 }
 
-footer ul {
+#header-search form {
+    background: white;
+    width: 80%;
+    height: 5rem;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
+    border-radius: 2rem;
 }
 
-footer ul li a {
-    text-decoration: none;
-    color: var(--text-color);
+#header-search form div {
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    border-right: 1px solid black;
 }
 
-footer ul li a:hover {
-    color: var(--hover-color);
-    border-bottom: solid 1px var(--hover-color);
+#header-search form div input {
+    align-self: flex-end;
 }
 
-footer p {
-    font-size: 0.8rem;
-    color: #aaa;
-}
-
-footer ul:first-of-type {
-    list-style: none;
-    gap: 2rem;
-    font-size: 1.5rem;
-}
-
-footer ul:last-of-type {
-    list-style: none;
-    color: var(--text-color);
-}
-
-footer ul:last-of-type li {
-    padding: 0 1rem;
-    border-right: 1px solid var(--text-color);
-    font-size: 0.8rem;
-}
-
-footer ul:last-of-type li:last-of-type {
+.search-button {
+    background: transparent;
     border: none;
+    cursor: pointer; 
+    padding: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
-
-@media screen and (max-width: 932px) {
-    .menu{
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        width: 80%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 100;
-        background-color: var(--main-color);
-        transition: all 1s ease-in-out;        
-    }
-
-    .menu ul {
-        display: flex;
-        flex-direction: column;
-        margin-top: 3rem;
-    }
-
-    .active-page {
-        background-color: inherit;
-        border: none;
-        border-radius: 0;
-        border-bottom: 1px solid white;
-    }
-
-    .logo-img {
-        width: 10rem;
-    }
-
-    .close-menu, .open-menu {display: block;}
-    #check:checked ~ .menu {right: 0;}
-
-    
+.search-button i {
+    font-size: 24px; 
+    color: #000; 
 }
 
-
-@media screen and (max-width: 932px) and (orientation: landscape) {
-    /* Hevtee uyd hiih zuilsee bich */
+.search-button:hover i {
+    color: var(--hover-color);
 }
 
-
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    footer ul:last-of-type {
-        flex-direction: column;
-        border: none;
-    }
-
-    footer ul:last-of-type li {
-        border: none;
-        margin-top: 1rem;
-    }
-}
 
 

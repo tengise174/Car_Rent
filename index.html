@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover good vehicle rental platform. Search for cars by location and dates">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header_footer.css">
     <title>Home</title>
 </head>
 
 <body>
     <header>
         <img class="logo-img" src="./assets/img/logo.png" alt="logo">
-        <input type="checkbox" id="check" aria-label="Toggle menu"> 
-        <nav class="menu">
+        <input type="checkbox" id="check" aria-label="Toggle menu">
+        <nav id="menu">
             <ul>
                 <li class="active-page"><a href="./index.html">Home</a></li>
                 <li><a href="./wishlist.html">Shopping Cart</a></li>
-                <li><a href="./login.html">Log In</a></li> 
+                <li><a href="./login.html">Log In</a></li>
             </ul>
             <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
@@ -26,22 +27,26 @@
     </header>
 
     <main>
-        <section class="header-search">
+        <section id="header-search">
             <h2>Хайх</h2>
             <form action="search.html" method="get">
-                <label for="location">Байршил</label>
-                <input type="text" id="location" placeholder="Location">
-
-                <label for="start-date">Эхлэх</label>
-                <input type="datetime-local" id="start-date">
-
-                <label for="end-date">Дуусах</label>
-                <input type="datetime-local" id="end-date">
-                <button type="submit">Search</button>
+                <div>
+                    <label for="location">Байршил</label>
+                    <input type="text" id="location" placeholder="Location">
+                </div>
+                <div>
+                    <label for="start-date">Эхлэх</label>
+                    <input type="datetime-local" id="start-date">
+                </div>
+                <div>
+                    <label for="end-date">Дуусах</label>
+                    <input type="datetime-local" id="end-date">
+                </div>
+                <button class="search-button" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </section>
 
-        <section class="about-us">
+        <section id="about-us">
             <h2>Бидний тухай</h2>
             <details>
                 <summary>Байгууллагын тухай</summary>
@@ -65,7 +70,7 @@
             </details>
         </section>
 
-        <section class="questions">
+        <section id="questions">
             <h2>Түгээмэл асуултууд</h2>
             <details>
                 <summary>Танай байгууллагыг сонгох шалтгаан?</summary>
