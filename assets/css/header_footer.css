@@ -2,7 +2,6 @@
     --main-color: black;
     --hover-color: #1E90FF;
     --active-color: blue;
-    --text-color: white;
 }
 
 * {
@@ -60,7 +59,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: var(--text-color);
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
@@ -81,7 +80,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-color);
+    color: white;
     background-color: var(--main-color);
     padding: 1rem 0;
     gap: 1rem;
@@ -95,7 +94,7 @@ footer ul {
 
 footer ul li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
 }
 
 footer ul li a:hover {
@@ -116,19 +115,18 @@ footer ul:first-of-type {
 
 footer ul:last-of-type {
     list-style: none;
-    color: var(--text-color);
+    color: white;
 }
 
 footer ul:last-of-type li {
     padding: 0 1rem;
-    border-right: 1px solid var(--text-color);
+    border-right: 1px solid white;
     font-size: 0.8rem;
 }
 
 footer ul:last-of-type li:last-of-type {
     border: none;
 }
-
 
 @media screen and (max-width: 932px) {
     #menu{
@@ -163,18 +161,14 @@ footer ul:last-of-type li:last-of-type {
     }
 
     .close-menu, .open-menu {display: block;}
-    #check:checked ~ #menu {right: 0;}
-
-    
+    #check:checked ~ #menu {right: 0;}    
 }
-
 
 @media screen and (max-width: 932px) and (orientation: landscape) {
     /* Hevtee uyd hiih zuilsee bich */
 }
 
-
-@media screen and (max-width: 768px) and (orientation: portrait) {
+@media screen and (max-width: 932px) and (orientation: portrait) {
     footer ul:last-of-type {
         flex-direction: column;
         border: none;
