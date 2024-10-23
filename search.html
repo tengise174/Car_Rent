@@ -8,124 +8,111 @@
         content="It has wide selection of rental cars for your needs. Filter by price, model, and availability to find the perfect vehicle">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/header_footer.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Car List</title>
 </head>
 
 <body>
-
     <header>
         <img class="logo-img" src="./assets/img/logo.png" alt="logo">
-        <input type="checkbox" id="check" aria-label="Toggle menu"> 
-        <nav class="menu">
+        <input type="checkbox" id="check" aria-label="Toggle menu">
+        <nav id="menu">
             <ul>
                 <li class="active-page"><a href="./index.html">Home</a></li>
                 <li><a href="./wishlist.html">Shopping Cart</a></li>
-                <li><a href="./login.html">Log In</a></li> 
+                <li><a href="./login.html">Log In</a></li>
             </ul>
             <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
         <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </header>
 
-    <main>
-        <section class="search-filter">
-            <h2>Хайх</h2>
-            <form>
-                <label for="location">Байршил</label>
-                <input type="text" id="location" placeholder="Location">
+    <main id="search-main">
 
-                <label for="start-date">Эхлэх</label>
-                <input type="datetime-local" id="start-date">
+        <form id="search-filter">
+            <div class="first-filter">
+                <div>
+                    <label for="location">Байршил</label>
+                    <input type="text" id="location" placeholder="Location">
+                </div>
+                <div>
+                    <label for="start-date">Эхлэх</label>
+                    <input type="datetime-local" id="start-date">
+                </div>
+                <div>
+                    <label for="end-date">Дуусах</label>
+                    <input type="datetime-local" id="end-date">
+                </div>
+            </div>
 
-                <label for="end-date">Дуусах</label>
-                <input type="datetime-local" id="end-date">
-
-
-                <label for="price">Үнэ</label>
-                <select id="price">
-                    <option>All</option>
+            <div class="second-filter">
+                <select id="price" aria-label="Үнэ">
+                    <option>Үнэ</option>
                     <option>Low</option>
                     <option>Medium</option>
                     <option>High</option>
                 </select>
 
-
-
-                <label for="type">Төрөл</label>
-                <select id="type">
-                    <option>All</option>
+                <select id="type" aria-label="Төрөл">
+                    <option>Төрөл</option>
                     <option>SUV</option>
                     <option>Sedan</option>
                     <option>Truck</option>
                 </select>
 
-
-                <label for="transmission">Хурдны хайрцаг</label>
-                <select id="transmission">
-                    <option>All</option>
+                <select id="transmission" aria-label="Хурдны хайрцаг">
+                    <option>Хурдны хайрцаг</option>
                     <option>Automatic</option>
                     <option>Manual</option>
                 </select>
 
-
-                <label for="passenger">Суудлын тоо</label>
-                <select id="passenger">
-                    <option>All</option>
+                <select id="passenger" aria-label="Суудал тоо">
+                    <option>Суудал тоо</option>
                     <option>4</option>
                     <option>6</option>
                     <option>8</option>
                 </select>
 
-                <label for="make">Марк</label>
-                <select id="make">
-                    <option>All</option>
+                <select id="make" aria-label="Марк">
+                    <option>Марк</option>
                     <option>Jeep</option>
                     <option>Toyota</option>
                     <option>Ford</option>
                 </select>
+                <button class="search-button" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>
 
-                <button type="submit">Search</button>
-            </form>
+        <section class="car-list">
+            <h2>Нийт 60 машин</h2>
+
+            <article class="car-item">
+                <img src="./assets/img/car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
+                <div>
+                    <h3>Jeep Wrangler Unlimited 2019</h3>
+                    <p>(6 аялал)</p>
+                    <p>Үнэлгээ: 5.0 ☆</p>
+                    <p>₮60,000/day</p>
+                    <button aria-label="Heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </article>
+
+            <article class="car-item">
+                <img src="./assets/img/car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
+                <div>
+                    <h3>Jeep Wrangler Unlimited 2019</h3>
+                    <p>(6 аялал)</p>
+                    <p>Үнэлгээ: 5.0 ☆</p>
+                    <p>₮60,000/day</p>
+                    <button aria-label="Heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </article>
         </section>
 
-
-        <section class="results">
-            <h2>Үр дүн</h2>
-
-            <section class="car-list">
-                <h2>Нийт 60 машин</h2>
-
-                <article class="car-item">
-                    <img src="car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
-                    <div>
-                        <h3>Jeep Wrangler Unlimited 2019</h3>
-                        <p>(6 seats)</p>
-                        <p>Rating: 5.0 ☆</p>
-                        <p>₮60,000/day</p>
-                    </div>
-                    <button>❤️</button>
-                </article>
-
-                <article class="car-item">
-                    <img src="car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
-                    <div>
-                        <h3>Jeep Wrangler Unlimited 2019</h3>
-                        <p>(6 seats)</p>
-                        <p>Rating: 5.0 ☆</p>
-                        <p>₮60,000/day</p>
-                    </div>
-                    <button>❤️</button>
-                </article>
-
-
-            </section>
-
-            <iframe title="Map showing the location of company location." class="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911999164666!2d-122.41941518468227!3d37.7749292797591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808b2d944e9d%3A0xa3e0ff4d78b8e2b3!2sSan%20Francisco%2C%20CA%2094102%2C%20USA!5e0!3m2!1sen!2s!4v1616184825082!5m2!1sen!2s"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-
-        </section>
+        <iframe title="Map showing the location of company location." class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911999164666!2d-122.41941518468227!3d37.7749292797591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808b2d944e9d%3A0xa3e0ff4d78b8e2b3!2sSan%20Francisco%2C%20CA%2094102%2C%20USA!5e0!3m2!1sen!2s!4v1616184825082!5m2!1sen!2s"
+            width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
     </main>
 
 
@@ -136,7 +123,7 @@
             <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
             <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
         </ul>
-        <img src="./assets/img/logo.png" alt="logo">
+        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
         <p>Copyright &copy; 2024 CarRent, Inc</p>
         <ul>
             <li><a href="./privacy.html">Мэдээллийн хамгаалалт</a></li>
