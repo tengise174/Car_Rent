@@ -1,0 +1,183 @@
+:root {
+    --main-color: black;
+    --hover-color: #1E90FF;
+    --active-color: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    background-color: var(--main-color);
+    padding: 0 3rem;
+}
+
+.open-menu, .close-menu {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.open-menu {
+    right: 1.5rem;
+}
+
+.close-menu {
+    top: 2rem;
+    right: 2rem;
+}
+
+#check {display: none;}
+
+.logo-img {
+    width: 20rem;
+    height: auto;
+    max-width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.active-page {
+    padding: 0.6rem;
+    border: solid 1px white;
+    border-radius: 0.6rem;
+    background-color: var(--active-color);
+}
+
+header nav ul li a:hover {
+    border-bottom: solid 2px;
+    color: var(--hover-color);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: var(--main-color);
+    padding: 1rem 0;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer ul li a:hover {
+    color: var(--hover-color);
+    border-bottom: solid 1px var(--hover-color);
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+footer ul:first-of-type {
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+footer ul:last-of-type {
+    list-style: none;
+    color: white;
+}
+
+footer ul:last-of-type li {
+    padding: 0 1rem;
+    border-right: 1px solid white;
+    font-size: 0.8rem;
+}
+
+footer ul:last-of-type li:last-of-type {
+    border: none;
+}
+
+@media screen and (max-width: 932px) {
+    #menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--main-color);
+        transition: all 1s ease-in-out;        
+    }
+
+    #menu ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+
+    .active-page {
+        background-color: inherit;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid white;
+    }
+
+    .logo-img {
+        width: 10rem;
+    }
+
+    .close-menu, .open-menu {display: block;}
+    #check:checked ~ #menu {right: 0;}    
+}
+
+@media screen and (max-width: 932px) and (orientation: landscape) {
+    /* Hevtee uyd hiih zuilsee bich */
+}
+
+@media screen and (max-width: 932px) and (orientation: portrait) {
+    footer ul:last-of-type {
+        flex-direction: column;
+        border: none;
+    }
+
+    footer ul:last-of-type li {
+        border: none;
+        margin-top: 1rem;
+    }
+}
+
+
