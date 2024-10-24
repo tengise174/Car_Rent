@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/header_footer.css">
+    <link rel="stylesheet" href="./assets/css/wishlist.css">
     <title>Car Wishlist</title>
 </head>
 
@@ -71,21 +72,23 @@
             <p>Daily Fee: <span>$50</span></p>
             <p>Total: <span>$150</span></p>
 
-            <form>
+            <form class="promo-form">
                 <label for="promo-code">Add promo code:</label>
+                <div class="input-group">
                 <input type="text" id="promo-code" placeholder="Enter code">
                 <button type="submit">Apply</button>
+                </div>
             </form>
 
             <button type="button">Go to Checkout</button>
-            <button type="button">Cancel Order?</button>
+            <button type="cancel_button">Cancel Order?</button>
 
             <section class="payment-methods">
                 <h3>Payment Methods</h3>
                 <ul>
-                    <li>Visa</li>
-                    <li>MasterCard</li>
-                    <li>PayPal</li>
+                    <li><i class="fab fa-cc-visa fa-3x"></i></li>
+                    <li><i class="fab fa-cc-paypal fa-3x"></i></li>
+                    <li><i class="fab fa-cc-mastercard fa-3x"></i></li>
                 </ul>
             </section>
         </aside>
