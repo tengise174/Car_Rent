@@ -4,30 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <style>
+        :root{
+            --background-color: #f9f9f9;
+            --light-blue: #007bff;
+            --dark-blue: #0056b3;
+            --yellow: #ffeb3b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #f0f4ff, #ffe39f);
+        }
+        .container {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .left {
+            flex: 1;
+            background-color: var(--background-color);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .left h2 {
+            margin-top: 20px;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .left label {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .left input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .left button {
+            padding: 12px;
+            background-color: var(--light-blue);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 300px; 
+            margin: 10px auto 0 auto;
+            display: block; 
+        }
+        .left button:hover {
+            background-color: var(--dark-blue);
+        }
+        .left .links {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            align-items: center;
+        }
+        .left .links a {
+            color: var(--light-blue);
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        .right {
+            flex: 1;
+            background-color: var(--dark-blue);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .right .logo {
+            background-color: var(--yellow);
+            padding: 20px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .right .logo img{
+            border-radius: 50%;
+            width: auto;
+            height: auto;
+        }
+        .right .company-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: var(--light-blue);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .right .circle1,
+        .right .circle2 {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .right .circle1 {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 50px;
+        }
+        .right .circle2 {
+            width: 150px;
+            height: 150px;
+            bottom: 50px;
+            right: 50px;
+        }
+    </style>
 </head>
 <body>
 
     <main class="container">
-        <section>
+        <section class="left">
             <header>
                 <h2>Log In</h2>
             </header>
             <form>
                 <label for="username">Username or Mail</label><br>
-                <input type="text" id="username" placeholder="Value"><br>
+                <input type="text" id="username" placeholder="Username"><br>
                 <label for="password">Password</label><br>
-                <input type="password" id="password" placeholder="Value"><br>
+                <input type="password" id="password" placeholder="Password"><br>
                 <button type="submit">Log In</button><br>
             </form>
-            <footer class="links">
-                <a href="#">Forgot password?</a>
+            <div class="links">
+                <a href="#">Forgot password?</a><br>
                 <span>Don't have an account? <a href="#">Sign Up</a></span>
-            </footer>
+            </div>
         </section>
 
         <aside class="right">
-            <header class="logo">LOGO</header>
-            <p class="company-name">uria ug</p>
+            <header class="logo"><img src="logo.png" alt="logo img"></header>
+            <p class="company-name">Easy and Fast</p>
             <div class="circle1"></div>
             <div class="circle2"></div>
         </aside>
