@@ -1,0 +1,42 @@
+
+.car-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 0px;
+}
+.content{
+    display: flex;
+    align-items: flex-start;
+}
+
+.car-item input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+.car-item h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+figure {
+    margin: 0;
+}
+
+.car-item img {
+    width: 130px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+figcaption {
+    font-size: 14px;
+    color: #666;
+}

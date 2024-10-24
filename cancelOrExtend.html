@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/header_footer.css">
-    <title>Car Wishlist</title>
+    <link rel="stylesheet" href="./assets/css/car_component.css">
+    <link rel="stylesheet" href="./assets/css/cancel.css">
+    <title>Cancel</title>
 </head>
 <body>
 
@@ -29,36 +31,35 @@
 
             <article class="car-item">
                 <input type="checkbox" id="vehicle1">
-                    <h2>Car Name</h2>
-                <figure>
+                <div class="content">   
                     <img src="car1.jfif" alt="Car image">
-                    <figcaption>Car description goes here.</figcaption>
-                </figure>
-                <form>
-                    <label for="from1">From:</label>
-                    <input type="date" id="from1">
-
-
-                    <label for="until1">Until:</label>
-                    <input type="date" id="until1">
-                </form>
+                    <figure>
+                        <h2>Car Name</h2>
+                        <figcaption>Car description goes here.</figcaption>
+                    </figure>
+                    <form>
+                        <label for="from">From:</label>
+                        <input type="date" id="from" name="from">
+                        <label for="until">Until:&nbsp</label>
+                        <input type="date" id="until" name="from">
+                    </form>
+                </div>
             </article>
-
             <article class="car-item">
-                <input type="checkbox" id="vehicle2">
-                    <h2>Car Name</h2>
-                <figure>
+                <input type="checkbox" id="vehicle1">
+                <div class="content">   
                     <img src="car1.jfif" alt="Car image">
-                    <figcaption>Car description goes here.</figcaption>
-                </figure>
-                <form>
-                    <label for="from2">From:</label>
-                    <input type="date" id="from2">
-
-
-                    <label for="until2">Until:</label>
-                    <input type="date" id="until2">
-                </form>
+                    <figure>
+                        <h2>Car Name</h2>
+                        <figcaption>Car description goes here.</figcaption>
+                    </figure>
+                    <form>
+                        <label for="from">From:</label>
+                        <input type="date" id="from" name="from">
+                        <label for="until">Until:&nbsp</label>
+                        <input type="date" id="until" name="from">
+                    </form>
+                </div>
             </article>
 
         </section>
@@ -70,8 +71,8 @@
                 <form>
                     <label for="from">From:</label>
                     <input type="date" id="from">
-
-                    <label for="until">Until:</label>
+                    <br>
+                    <label for="until">Until:&nbsp</label>
                     <input type="date" id="until">
                     <br>
                     <label for="reason">Reason:</label>
@@ -81,18 +82,18 @@
                 <p><b>Total:</b> <span>150₮</span></p>
                 <button type="button">Cancel Order?</button>
             </section>
-            
+            <hr>
             <section class="Extend">
                 <h3>Extend</h3>
                 <form>
                     <label for="from3">From:</label>
                     <input type="date" id="from3" >
-
-                    <label for="until3">Until:</label>
+                    <br>
+                    <label for="until3">Until:&nbsp</label>
                     <input type="date" id="until3">
                     
                 </form>
-                <p>Daily Fee <span>150₮</span></p>
+                <p class="daily">Daily Fee <span>150₮</span></p>
                 <p><b>Total:</b> <span>150₮</span></p>
 
                 <button type="button">Go to Checkout</button>
@@ -101,9 +102,9 @@
                 <section class="payment-methods">
                     <h3>Payment Methods</h3>
                     <ul>
-                        <li>Visa</li>
-                        <li>MasterCard</li>
-                        <li>PayPal</li>
+                    <li><i class="fab fa-cc-visa fa-2x"></i></li>
+                    <li><i class="fab fa-cc-paypal fa-2x"></i></li>
+                    <li><i class="fab fa-cc-mastercard fa-2x"></i></li>
                     </ul>
                 </section>
             </section>
