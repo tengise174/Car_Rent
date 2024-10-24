@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/header_footer.css">
     <title>Car Wishlist</title>
 </head>
 <body>
 
     <header>
-        <h1>Car Rent</h1>
-        <nav>
+        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
+        <input type="checkbox" id="check" aria-label="Toggle menu">
+        <nav id="menu">
             <ul>
-                <li><a href="./index.html">Home</a></li>
+                <li class="active-page"><a href="./index.html">Home</a></li>
                 <li><a href="./wishlist.html">Shopping Cart</a></li>
                 <li><a href="./login.html">Log In</a></li>
             </ul>
+            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </header>
 
     <main>
@@ -108,6 +112,24 @@
             </section>
         </aside>
     </main>
+
+    <footer></footer>
+        <ul>
+            <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
+        <p>Copyright &copy; 2024 CarRent, Inc</p>
+        <ul>
+            <li><a href="./privacy.html">Мэдээллийн хамгаалалт</a></li>
+            <li><a href="./privacy.html">Хэрэглэгчийн эрх үүрэг</a></li>
+            <li><a href="./privacy.html">Төлбөрийн нөхцөл</a></li>
+            <li><a href="./privacy.html">Даатгал</a></li>
+            <li><a href="./privacy.html">Гэрээ</a></li>
+        </ul>
+    </footer>
 
 </body>
 </html>
