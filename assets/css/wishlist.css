@@ -156,3 +156,40 @@ button:hover {
     border-radius: 5px;
     font-size: 14px;
 }
+@media (prefers-color-scheme: dark){
+    
+    body {
+        background-color: #555;
+        color: #E0E0E0;
+    }
+    
+    input[type="date"],
+    select, 
+    #promo-code {
+        background-color: #222;
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+    
+    .order-summary {
+        background-color: #1E1E1E;
+        box-shadow: 0 4px 8px var(--shadow-color);
+    }
+    
+    button[type="submit"], 
+    button[type="button"] {
+        background-color: var(--light-blue);
+        color: white;
+    }
+    
+    .payment-methods li {
+        background-color: #333;
+        color: var(--text-color);
+    }
+    .wishlist{
+        color:black
+    }
+    .wishlist h1{
+        border-bottom: 2px solid var(--dark-blue);
+    }
+}
