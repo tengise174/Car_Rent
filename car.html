@@ -7,24 +7,32 @@
     <meta name="description" content="All important information about this car">
     <link rel="stylesheet" href="./assets/css/header_footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	 <link rel="stylesheet" href="car.css">
+	 <link rel="stylesheet" href="header_footer.css">
     <title>Car</title>
 </head>
 
 <body>
-    <header>
-        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
-        <input type="checkbox" id="check" aria-label="Toggle menu"> 
-        <nav class="menu">
-            <ul>
-                <li class="active-page"><a href="./index.html">Home</a></li>
-                <li><a href="./wishlist.html">Shopping Cart</a></li>
-                <li><a href="./login.html">Log In</a></li> 
-            </ul>
-            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
-        </nav>
-        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
-    </header>
 
+    <header>
+        <img src="logo.png" alt="Company Logo" class="logo-img">
+        <input type="checkbox" id="check">
+        <label for="check" class="open-menu">
+            <i class="fas fa-bars"></i>
+        </label>
+
+        <nav id="menu">
+            <label for="check" class="close-menu">
+                <i class="fas fa-times"></i>
+            </label>
+            <ul>
+                <li><a href="#" class="active-page">Home</a></li>
+                <li><a href="#">Shopping Cart</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <article>
             <h2>Jeep Wrangler Unlimited 2019</h2>
@@ -85,22 +93,21 @@
             </form>
         </section>
     </main>
+    
     <footer>
         <ul>
-            <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
         </ul>
-        <img src="./assets/img/logo.png" alt="logo">
-        <p>Copyright &copy; 2024 CarRent, Inc</p>
+
         <ul>
-            <li><a href="./privacy.html">Мэдээллийн хамгаалалт</a></li>
-            <li><a href="./privacy.html">Хэрэглэгчийн эрх үүрэг</a></li>
-            <li><a href="./privacy.html">Төлбөрийн нөхцөл</a></li>
-            <li><a href="./privacy.html">Даатгал</a></li>
-            <li><a href="./privacy.html">Гэрээ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Contact Us</a></li>
         </ul>
+
+        <p>&copy; 2024 Car Rent. All rights reserved.</p>
     </footer>
 </body>
 
