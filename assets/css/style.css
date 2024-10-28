@@ -197,6 +197,9 @@ input:focus {
 
 
 .car-list {
+    max-height: 30rem; 
+    overflow-y: auto; 
+    overflow-x: hidden;
     grid-column: 1 / span 3;
     margin: 1rem 2rem;
 }

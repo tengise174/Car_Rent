@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const filters = getQueryParams();
     const filteredCars = filterCars(cars, filters);
+    setDropdownValues(filters);
     renderCars(filteredCars);
 
     const filterButton = document.querySelector(".search-button");
@@ -25,6 +26,15 @@ function getQueryParams() {
     };
 }
 
+function setDropdownValues(filters) {
+    for (const key in filters) {
+        const selectElement = document.getElementById(key);
+        if (selectElement) {
+            selectElement.value = filters[key]; 
+        }
+    }
+}
+
 function handleSearch(cars) {
     const filters = {
         make: document.getElementById('make').value,
@@ -37,7 +47,7 @@ function handleSearch(cars) {
     const queryParams = new URLSearchParams();
 
     for (const key in filters) {
-        if (filters[key]) { 
+        if (filters[key]) {
             queryParams.append(key, filters[key]);
         }
     }
