@@ -17,9 +17,17 @@
         <input type="checkbox" id="check" aria-label="Toggle menu">
         <nav id="menu">
             <ul>
-                <li class="active-page"><a href="./index.html">Home</a></li>
-                <li><a href="./wishlist.html">Shopping Cart</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li class="active-page"><a href="./wishlist.html">Shopping Cart</a></li>
+                <li class="user-menu">
+                    <a href="./login.html" id="user-dropdown-toggle">User <i class="fas fa-user"></i></a>
+                    <div class="dropdown-content" id="user-dropdown">
+                        <a href="./login.html">Login</a>
+                        <a href="./signup.html">Signup</a>
+                        <a href="./account.html">Account</a>
+                        <a href="./logout.html">Logout</a>
+                    </div>
+                </li>
             </ul>
             <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
@@ -113,6 +121,7 @@
         </ul>
     </footer>
 
+    <script src="./assets/js/dropmenu.js"></script>
 </body>
 
 </html>

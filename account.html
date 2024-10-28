@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Хувийн Мэдээлэл</title>
     <link rel="stylesheet" href="./assets/css/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/header_footer.css">
 </head>
 
@@ -15,9 +16,17 @@
         <input type="checkbox" id="check" aria-label="Toggle menu">
         <nav id="menu">
             <ul>
-                <li class="active-page"><a href="./index.html">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="./wishlist.html">Shopping Cart</a></li>
-                <li><a href="./login.html">Log In</a></li>
+                <li class="user-menu active-page">
+                    <a href="./login.html" id="user-dropdown-toggle">User <i class="fas fa-user"></i></a>
+                    <div class="dropdown-content" id="user-dropdown">
+                        <a href="./login.html">Login</a>
+                        <a href="./signup.html">Signup</a>
+                        <a href="./account.html">Account</a>
+                        <a href="./logout.html">Logout</a>
+                    </div>
+                </li>
             </ul>
             <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
@@ -70,6 +79,8 @@
             <li><a href="./privacy.html">Гэрээ</a></li>
         </ul>
     </footer>
+
+    <script src="./assets/js/dropmenu.js"></script>
 </body>
 
 </html>

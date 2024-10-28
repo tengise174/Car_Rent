@@ -10,23 +10,25 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Company Logo" class="logo-img">
-        <input type="checkbox" id="check">
-        <label for="check" class="open-menu">
-            <i class="fas fa-bars"></i>
-        </label>
-
+        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
+        <input type="checkbox" id="check" aria-label="Toggle menu">
         <nav id="menu">
-            <label for="check" class="close-menu">
-                <i class="fas fa-times"></i>
-            </label>
             <ul>
-                <li><a href="#" class="active-page">Home</a></li>
-                <li><a href="#">Shopping Cart</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Login</a></li>
+                <li class="active-page"><a href="./index.html">Home</a></li>
+                <li><a href="./wishlist.html">Shopping Cart</a></li>
+                <li class="user-menu">
+                    <a href="./login.html" id="user-dropdown-toggle">User <i class="fas fa-user"></i></a>
+                    <div class="dropdown-content" id="user-dropdown">
+                        <a href="./login.html">Login</a>
+                        <a href="./signup.html">Signup</a>
+                        <a href="./account.html">Account</a>
+                        <a href="./logout.html">Logout</a>
+                    </div>
+                </li>
             </ul>
+            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
         </nav>
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </header>
     <main>
         <h2>Түрээсийн түүх</h2>
@@ -90,5 +92,6 @@
 
         <p>&copy; 2024 Car Rent. All rights reserved.</p>
     </footer>
+    <script src="./assets/js/dropmenu.js"></script>
 </body>
 </html>
