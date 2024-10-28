@@ -1,6 +1,7 @@
 export class Car {
-    constructor({id, make, model, year, priceCategory, type, transmission, seats, rating, trips, dailyRate, image}) {
+    constructor({id, location ,make, model, year, priceCategory, type, transmission, seats, rating, trips, dailyRate, image, startDate, endDate}) {
         this.id = id;
+        this.location = location;
         this.make = make;
         this.model = model;
         this.year = year;
@@ -11,7 +12,9 @@ export class Car {
         this.rating = rating;
         this.trips = trips;
         this.dailyRate = dailyRate;
-        this.image = image;
+        this.image = image[0];
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     createCarItem() {
@@ -32,7 +35,7 @@ export class Car {
 }
 
 export async function fetchCarsData() {
-    const url = 'https://api.jsonbin.io/v3/b/671f7917e41b4d34e44a245b';
+    const url = 'https://api.jsonbin.io/v3/b/671fa22ce41b4d34e44a38de';
 
     const apiKey = "$2a$10$fRL5.SIcepg5Dq1D5lWfzurg9Niu.tXWvdswZgPsrXzY2DV6MPz6y";
 
@@ -57,10 +60,13 @@ export function filterCars(cars, filters) {
     return cars.filter(car => {
         return (
             (!filters.price || car.priceCategory === filters.price)
+            && (!filters.location || car.location === filters.location)
             && (!filters.type || car.type === filters.type)
             && (!filters.transmission || car.transmission === filters.transmission)
             && (!filters.seats || car.seats === parseInt(filters.seats))
             && (!filters.make || car.make === filters.make)
+            && (!filters.startDate || car.startDate <= filters.startDate)
+            && (!filters.endDate || car.endDate >= filters.endDate)
         );
     });
 }

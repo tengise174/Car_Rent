@@ -18,11 +18,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 function getQueryParams() {
     const queryParams = new URLSearchParams(window.location.search);
     return {
+        location: queryParams.get('location') || '',
         make: queryParams.get('make') || '',
         type: queryParams.get('type') || '',
         transmission: queryParams.get('transmission') || '',
         seats: queryParams.get('seats') || '',
         price: queryParams.get('price') || '',
+        startDate: queryParams.get('startDate') || '',
+        endDate: queryParams.get('endDate') || ''
     };
 }
 
@@ -37,11 +40,14 @@ function setDropdownValues(filters) {
 
 function handleSearch(cars) {
     const filters = {
+        location: document.getElementById('location').value,
         make: document.getElementById('make').value,
         type: document.getElementById('type').value,
         transmission: document.getElementById('transmission').value,
         seats: document.getElementById('seats').value,
         price: document.getElementById('price').value,
+        startDate: document.getElementById('start-date').value,
+        endDate: document.getElementById('end-date').value,
     };
 
     const queryParams = new URLSearchParams();
