@@ -91,7 +91,7 @@
             </form>
 
             <button type="button">Go to Checkout</button>
-            <button type="cancel_button">Cancel Order?</button>
+            <button type="cancel_button" onclick="navigateToCancel()">Cancel Order?</button>
 
             <section class="payment-methods">
                 <h3>Payment Methods</h3>
@@ -122,6 +122,11 @@
     </footer>
 
     <script src="./assets/js/dropmenu.js"></script>
+    <script>
+        function navigateToCancel(){
+            window.location.href="./CancelOrExtend.html";
+        }
+    </script>
 </body>
 
 </html>

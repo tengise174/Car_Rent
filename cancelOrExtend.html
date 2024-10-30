@@ -73,8 +73,9 @@
         </section>
 
         <aside class="order-request">
+            <button id="toggle">Cancel Order</button>
             <h2>Order Request</h2>
-            <section class="Cancel">
+            <section id="Cancel" class="hidden">
                 <h3>Cancel</h3>
                 <form>
                     <label for="from">From:</label>
@@ -90,8 +91,8 @@
                 <p><b>Total:</b> <span>150₮</span></p>
                 <button type="button">Cancel Order?</button>
             </section>
-            <hr>
-            <section class="Extend">
+            
+            <section id="Extend">
                 <h3>Extend</h3>
                 <form>
                     <label for="from3">From:</label>
@@ -139,4 +140,23 @@
 
     <script src="./assets/js/dropmenu.js"></script>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+    const toggleButton = document.getElementById('toggle');
+    const cancelSection = document.getElementById('Cancel');
+    const extendSection = document.getElementById('Extend');
+
+    toggleButton.addEventListener('click',()=>{
+        if (cancelSection.classList.contains('hidden')){
+            cancelSection.classList.remove('hidden');
+            extendSection.classList.add('hidden');
+             toggleButton.textContent = 'Order Extend';
+        } else{
+            cancelSection.classList.add('hidden');
+            extendSection.classList.remove('hidden');
+            toggleButton.textContent = 'Order Cancel';
+        }
+    });
+});
+</script>
 </html>

@@ -21,6 +21,7 @@ body {
 
 main {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 40px;
     gap: 20px;
@@ -105,6 +106,17 @@ select {
     border-radius: 5px;
     border: 1px solid #ddd;
 }
+.cancel-button{
+    background-color: var(--light-blue);
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
 button {
     margin-top: 10px;
@@ -126,11 +138,6 @@ button[type="button"] {
     background-color: var(--light-blue);
     color: white;
     border-radius: 20px;
-}
-
-button[type="cancel_button"] {
-    margin-top: 5px;
-    border-radius: 20px; 
 }
 
 button:hover {
@@ -191,5 +198,18 @@ button:hover {
     }
     .wishlist h1{
         border-bottom: 2px solid var(--dark-blue);
+    }
+}
+@media only screen and (max-width: 932px) {
+    .container {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:932px) and (orientation:portrait){
+    .wishlist{
+        width: 100%;
+    }
+    .content{
+        flex-direction: column;
     }
 }

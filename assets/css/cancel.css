@@ -21,6 +21,7 @@ body {
 
 main {
     display: flex;
+    flex-wrap:wrap ;
     justify-content: space-between;
     padding: 40px;
     gap: 20px;
@@ -106,7 +107,13 @@ input[type="text"]{
     border-radius: 5px;
     font-size: 14px;
 }
-
+.hidden{
+    display: none;
+}
+ #toggle{
+    background-color: var(--background-color);
+    color:var(--light-blue);
+}
 button {
     margin-top: 10px;
     width: 100%;
@@ -155,5 +162,16 @@ h3{
     }
     .wishlist h1{
         border-bottom: 2px solid var(--dark-blue);
+    }
+}
+@media screen and (max-width: 932px) and (orientation:portrait) {
+    .container{
+        flex-direction: column;
+    }
+    .wishlist{
+        width: 100%;
+    }
+    .content{
+        flex-direction: column;
     }
 }
