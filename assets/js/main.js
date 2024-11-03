@@ -10,9 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const filterButton = document.querySelector(".search-button");
     filterButton.addEventListener('click', (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         handleSearch(cars);
     });
+
+    if (filteredCars.length === 0) {
+        document.getElementById('cars-list').innerHTML = '<p>No cars found matching your criteria.</p>';
+    }
 });
 
 function getQueryParams() {
@@ -61,4 +65,4 @@ function handleSearch(cars) {
 
     const filteredCars = filterCars(cars, filters);
     renderCars(filteredCars);
-}
+
