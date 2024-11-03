@@ -1,3 +1,5 @@
+import { fetchCarsData, filterCars, renderCars } from './carModule.js';
+
 document.addEventListener('DOMContentLoaded', async () => {
     const cars = await fetchCarsData();
 
@@ -8,10 +10,38 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const filterButton = document.querySelector(".search-button");
     filterButton.addEventListener('click', (event) => {
-        event.preventDefault(); // Энэ хэсгийг хадгална
-        handleSearch(cars); // Хайлтын үйл явцыг гүйцэтгэнэ
+        event.preventDefault();
+        handleSearch(cars);
     });
+
+    // Мэдээллийг шүүх үед хэрэглэгчээс оруулсан шүүлтүүрүүдийг харуулах
+    if (filteredCars.length === 0) {
+        document.getElementById('cars-list').innerHTML = '<p>No cars found matching your criteria.</p>';
+    }
 });
+
+function getQueryParams() {
+    const queryParams = new URLSearchParams(window.location.search);
+    return {
+        location: queryParams.get('location') || '',
+        make: queryParams.get('make') || '',
+        type: queryParams.get('type') || '',
+        transmission: queryParams.get('transmission') || '',
+        seats: queryParams.get('seats') || '',
+        price: queryParams.get('price') || '',
+        startDate: queryParams.get('startDate') || '',
+        endDate: queryParams.get('endDate') || ''
+    };
+}
+
+function setDropdownValues(filters) {
+    for (const key in filters) {
+        const selectElement = document.getElementById(key);
+        if (selectElement) {
+            selectElement.value = filters[key]; 
+        }
+    }
+}
 
 function handleSearch(cars) {
     const filters = {
@@ -36,4 +66,9 @@ function handleSearch(cars) {
 
     const filteredCars = filterCars(cars, filters);
     renderCars(filteredCars);
+
+    // Шүүлтүүртэй тохирох машинууд байхгүй үед үзүүлэх
+    if (filteredCars.length === 0) {
+        document.getElementById('cars-list').innerHTML = '<p>No cars found matching your criteria.</p>';
+    }
 }
