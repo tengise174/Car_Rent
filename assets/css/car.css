@@ -118,6 +118,7 @@ article button:hover {
     font-size: 1rem;
 }
 
+/* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     main {
         width: 95%;
@@ -135,5 +136,17 @@ article button:hover {
     section ul {
         flex-direction: column;
         gap: 10px;
+    }
+
+    article h2, article h3 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    article p, .ratings p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    article button {
+        width: 100%; /* Make buttons full width */
     }
 }
