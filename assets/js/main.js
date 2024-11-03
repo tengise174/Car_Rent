@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const filterButton = document.querySelector(".search-button");
     filterButton.addEventListener('click', (event) => {
-        event.preventDefault();
+        event.preventDefault(); 
         handleSearch(cars);
     });
 });
