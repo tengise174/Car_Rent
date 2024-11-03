@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental History</title>
-    <link rel="stylesheet" href="./assets/css/history.css">
-	 <link rel="stylesheet" href="./assets/css/header_footer.css">
+    <meta name="description"
+        content="It has wide selection of rental cars for your needs. Filter by price, model, and availability to find the perfect vehicle">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/header_footer.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Car List</title>
 </head>
-<body>
 
+<body>
     <header>
         <img class="logo-img" src="./assets/img/logo.png" alt="logo">
         <input type="checkbox" id="check" aria-label="Toggle menu">
@@ -30,68 +34,49 @@
         </nav>
         <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </header>
-    <main>
-        <h2>Түрээсийн түүх</h2>
 
-        <section>
-<div class="car-image">    
-<a href="https://images.app.goo.gl/aqvuFEL4szsd9aYN6">        
-<img src="jeep-wrangler.jpg" alt="Jeep Wrangler Unlimited 2019">    
-</a>
-</div><div class="car-info">
-          
-                <h3>Jeep Wrangler Unlimited 2019</h3>
-                <p>Түрээсийн эхлэх хугацаа: 06/20/2024<br>
-                Түрээсийн дуусах хугацаа: 06/30/2024<br>
-                Төлөв: Хүлээлгэн өгсөн</p>
-                <button>Сэтгэгдэл үлдээх</button>
-            </div>
+    <main id="search-main">
+        <form id="search-filter">
+            
+        </form>
+
+        <section class="car-list">
+            <h2>Нийт 60 машин</h2>
+
+            <article class="car-item">
+                <img src="./assets/img/car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
+                <div>
+                    <h3><a href="car.html">Jeep Wrangler Unlimited 2019</a></h3>
+                    <p>(6 аялал)</p>
+                    <p>Үнэлгээ: 5.0 ☆</p>
+                    <p>₮60,000/day</p>
+                    <button aria-label="Heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </article>
+
+            <article class="car-item">
+                <img src="./assets/img/car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
+                <div>
+                    <h3><a href="car.html">Jeep Wrangler Unlimited 2019</a></h3>
+                    <p>(6 аялал)</p>
+                    <p>Үнэлгээ: 5.0 ☆</p>
+                    <p>₮60,000/day</p>
+                    <button aria-label="Heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+            </article>
         </section>
 
-        <section>
-            <div class="car-image">
-                <img src="lexus-suv.jpg" alt="Lexus SUV Fiyat 2022">
-            </div>
-            <div class="car-info">
-                <h3>Lexus SUV Fiyat 2022</h3>
-                <p>Түрээсийн эхлэх хугацаа: 08/10/2024<br>
-                Түрээсийн дуусах хугацаа: 08/20/2024<br>
-                Төлөв: Хүлээлгэн өгсөн</p>
-                <button>Сэтгэгдэл үлдээх</button>
-            </div>
-        </section>
-
-        <section>
-            <div class="car-image">
-                <img src="toyota-land-cruiser.jpg" alt="2024 Toyota Land Cruiser 300">
-            </div>
-            <div class="car-info">
-                <h3>2024 Toyota Land Cruiser 300</h3>
-                <p>Түрээсийн эхлэх хугацаа: 09/01/2024<br>
-                Түрээсийн дуусах хугацаа: 09/03/2024<br>
-                Төлөв: Хүлээлгэн өгсөн</p>
-                <button>Сэтгэгдэл үлдээх</button>
-            </div>
-        </section>
-
+        <iframe title="Map showing the location of company location." class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.911999164666!2d-122.41941518468227!3d37.7749292797591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808b2d944e9d%3A0xa3e0ff4d78b8e2b3!2sSan%20Francisco%2C%20CA%2094102%2C%20USA!5e0!3m2!1sen!2s!4v1616184825082!5m2!1sen!2s"
+            width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
     </main>
-    <script src="script.js"></script>
 
     <footer>
-        <ul>
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-
-        <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-
-        <p>&copy; 2024 Car Rent. All rights reserved.</p>
     </footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
     <script src="./assets/js/dropmenu.js"></script>
 </body>
+
 </html>
