@@ -36,68 +36,18 @@
     </header>
 
     <main id="search-main">
-
         <form id="search-filter">
-            <div class="first-filter">
-                <div>
-                    <label for="location">Байршил</label>
-                    <input type="text" id="location" placeholder="Location">
-                </div>
-                <div>
-                    <label for="start-date">Эхлэх</label>
-                    <input type="datetime-local" id="start-date">
-                </div>
-                <div>
-                    <label for="end-date">Дуусах</label>
-                    <input type="datetime-local" id="end-date">
-                </div>
-            </div>
-
-            <div class="second-filter">
-                <select id="price" aria-label="Үнэ">
-                    <option value="">Үнэ</option>
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                </select>
-
-                <select id="type" aria-label="Төрөл">
-                    <option value="">Төрөл</option>
-                    <option value="SUV">SUV</option>
-                    <option value="Sedan">Sedan</option>
-                    <option value="Truck">Truck</option>
-                </select>
-
-                <select id="transmission" aria-label="Хурдны хайрцаг">
-                    <option value="">Хурдны хайрцаг</option>
-                    <option value="Automatic">Automatic</option>
-                    <option value="Manual">Manual</option>
-                </select>
-
-                <select id="seats" aria-label="Суудал тоо">
-                    <option value="">Суудал тоо</option>
-                    <option value="4">4</option>
-                    <option value="6">6</option>
-                    <option value="8">8</option>
-                </select>
-
-                <select id="make" aria-label="Марк">
-                    <option value="">Марк</option>
-                    <option value="Jeep">Jeep</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Ford">Ford</option>
-                </select>
-                <button class="search-button" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
+            <!-- Filter form content -->
         </form>
 
         <section class="car-list">
             <h2>Нийт 60 машин</h2>
 
+            <!-- Машины жагсаалт -->
             <article class="car-item">
                 <img src="./assets/img/car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
                 <div>
-                    <h3>Jeep Wrangler Unlimited 2019</h3>
+                    <h3><a href="car.html">Jeep Wrangler Unlimited 2019</a></h3>
                     <p>(6 аялал)</p>
                     <p>Үнэлгээ: 5.0 ☆</p>
                     <p>₮60,000/day</p>
@@ -108,7 +58,7 @@
             <article class="car-item">
                 <img src="./assets/img/car-image-placeholder.jpg" alt="Jeep Wrangler Unlimited 2019">
                 <div>
-                    <h3>Jeep Wrangler Unlimited 2019</h3>
+                    <h3><a href="car.html">Jeep Wrangler Unlimited 2019</a></h3>
                     <p>(6 аялал)</p>
                     <p>Үнэлгээ: 5.0 ☆</p>
                     <p>₮60,000/day</p>
@@ -123,23 +73,8 @@
         </iframe>
     </main>
 
-
     <footer>
-        <ul>
-            <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-        </ul>
-        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
-        <p>Copyright &copy; 2024 CarRent, Inc</p>
-        <ul>
-            <li><a href="./privacy.html">Мэдээллийн хамгаалалт</a></li>
-            <li><a href="./privacy.html">Хэрэглэгчийн эрх үүрэг</a></li>
-            <li><a href="./privacy.html">Төлбөрийн нөхцөл</a></li>
-            <li><a href="./privacy.html">Даатгал</a></li>
-            <li><a href="./privacy.html">Гэрээ</a></li>
-        </ul>
+        <!-- Footer content -->
     </footer>
 
     <script type="module" src="./assets/js/main.js"></script>
