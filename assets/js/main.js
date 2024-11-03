@@ -13,11 +13,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         event.preventDefault();
         handleSearch(cars);
     });
-
-    // Мэдээллийг шүүх үед хэрэглэгчээс оруулсан шүүлтүүрүүдийг харуулах
-    if (filteredCars.length === 0) {
-        document.getElementById('cars-list').innerHTML = '<p>No cars found matching your criteria.</p>';
-    }
 });
 
 function getQueryParams() {
@@ -66,9 +61,4 @@ function handleSearch(cars) {
 
     const filteredCars = filterCars(cars, filters);
     renderCars(filteredCars);
-
-    // Шүүлтүүртэй тохирох машинууд байхгүй үед үзүүлэх
-    if (filteredCars.length === 0) {
-        document.getElementById('cars-list').innerHTML = '<p>No cars found matching your criteria.</p>';
-    }
 }
