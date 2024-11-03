@@ -1,5 +1,3 @@
-import { fetchCarsData, filterCars, renderCars } from './carModule.js';
-
 document.addEventListener('DOMContentLoaded', async () => {
     const cars = await fetchCarsData();
 
@@ -10,33 +8,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const filterButton = document.querySelector(".search-button");
     filterButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        handleSearch(cars);
+        event.preventDefault(); // Энэ хэсгийг хадгална
+        handleSearch(cars); // Хайлтын үйл явцыг гүйцэтгэнэ
     });
 });
-
-function getQueryParams() {
-    const queryParams = new URLSearchParams(window.location.search);
-    return {
-        location: queryParams.get('location') || '',
-        make: queryParams.get('make') || '',
-        type: queryParams.get('type') || '',
-        transmission: queryParams.get('transmission') || '',
-        seats: queryParams.get('seats') || '',
-        price: queryParams.get('price') || '',
-        startDate: queryParams.get('startDate') || '',
-        endDate: queryParams.get('endDate') || ''
-    };
-}
-
-function setDropdownValues(filters) {
-    for (const key in filters) {
-        const selectElement = document.getElementById(key);
-        if (selectElement) {
-            selectElement.value = filters[key]; 
-        }
-    }
-}
 
 function handleSearch(cars) {
     const filters = {
