@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+(<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,6 +37,58 @@
 
     <main id="search-main">
         <form id="search-filter">
+            <form id="search-filter">
+            <div class="first-filter">
+                <div>
+                    <label for="location">Байршил</label>
+                    <input type="text" id="location" placeholder="Location">
+                </div>
+                <div>
+                    <label for="start-date">Эхлэх</label>
+                    <input type="datetime-local" id="start-date">
+                </div>
+                <div>
+                    <label for="end-date">Дуусах</label>
+                    <input type="datetime-local" id="end-date">
+                </div>
+            </div>
+
+            <div class="second-filter">
+                <select id="price" aria-label="Үнэ">
+                    <option value="">Үнэ</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <select id="type" aria-label="Төрөл">
+                    <option value="">Төрөл</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Truck">Truck</option>
+                </select>
+
+                <select id="transmission" aria-label="Хурдны хайрцаг">
+                    <option value="">Хурдны хайрцаг</option>
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
+                </select>
+
+                <select id="seats" aria-label="Суудал тоо">
+                    <option value="">Суудал тоо</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                </select>
+
+                <select id="make" aria-label="Марк">
+                    <option value="">Марк</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Ford">Ford</option>
+                </select>
+                <button class="search-button" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>.
            
         </form>
 
