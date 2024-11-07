@@ -58,7 +58,9 @@ section ul li {
     padding: 10px 20px;
     background-color: #f8f8f8;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 8px;=
+    margin-right: 5px;
+    color: #555; 
 }
 
 article button {
@@ -88,6 +90,7 @@ article button:hover {
 
 .ratings p {
     font-size: 1.2rem;
+    color: #FFD700;
 }
 
 .rental-period {
@@ -118,7 +121,6 @@ article button:hover {
     font-size: 1rem;
 }
 
-/* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     main {
         width: 95%;
@@ -139,14 +141,14 @@ article button:hover {
     }
 
     article h2, article h3 {
-        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+        font-size: 1.5rem; 
     }
 
     article p, .ratings p {
-        font-size: 1rem; /* Adjust paragraph font size */
+        font-size: 1rem; 
     }
 
     article button {
-        width: 100%; /* Make buttons full width */
+        width: 100%; 
     }
 }
