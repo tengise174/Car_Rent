@@ -26,7 +26,7 @@ figure {
     grid-template-areas:
         "large-image small-image-1"
         "large-image small-image-2";
-    grid-template-columns: 2fr 1fr=;
+    grid-template-columns: 2fr 1fr;
     gap: 10px;
     margin: 0;
 }
@@ -46,9 +46,21 @@ figure {
 
 .car-specs {
     grid-area: car-specs;
+    align-self: start;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.car-specs h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.car-specs p {
+    font-size: 1.2rem;
+    color: #777;
 }
 
 .car-specs ul {
@@ -85,11 +97,26 @@ figure {
     color: #555;
 }
 
-.ratings, .rental-period {
+.ratings {
     margin-top: 20px;
+    color: #333; 
 }
 
-.ratings h3,
+.ratings p {
+    font-size: 1.2rem;
+    color: #333; 
+}
+
+.ratings .star {
+    color: #FFD700; 
+    font-size: 1.5rem;
+}
+
+.rental-period {
+    margin-top: 20px;
+    padding-left: 10px; 
+}
+
 .rental-period h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -107,7 +134,7 @@ figure {
 
 .rental-period input[type="datetime-local"],
 .rental-period input[type="text"] {
-    padding: 5px;
+    padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -134,10 +161,7 @@ figure {
     }
 
     .car-description h3,
-    .car-specs h2,
-    .car-specs h3,
-    .ratings h3,
-    .rental-period h3 {
+    .car-specs h2 {
         font-size: 1.5rem;
     }
 }
