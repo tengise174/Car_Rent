@@ -4,7 +4,6 @@ document.getElementById('user-dropdown-toggle').addEventListener('click', functi
     dropdown.classList.toggle('active');
 });
 
-// Optional: Close dropdown if clicked outside
 window.addEventListener('click', function (e) {
     const dropdown = document.getElementById('user-dropdown');
     if (!dropdown.contains(e.target) && !document.getElementById('user-dropdown-toggle').contains(e.target)) {
