@@ -83,6 +83,10 @@ article button:hover {
     margin-top: 20px;
 }
 
+.fas fa-star {
+    color: #FFD700;
+}
+
 .ratings h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
@@ -90,7 +94,6 @@ article button:hover {
 
 .ratings p {
     font-size: 1.2rem;
-    color: #FFD700;
 }
 
 .rental-period {
