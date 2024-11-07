@@ -67,8 +67,7 @@ form label {
     font-size: 14px;
 }
 
-input[type="date"],
-select {
+input[type="date"] {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -170,8 +169,6 @@ button:hover {
         color: #E0E0E0;
     }
     
-    input[type="date"],
-    select, 
     #promo-code {
         background-color: #222;
         color: var(--text-color);
