@@ -9,7 +9,7 @@ main {
     display: grid;
     grid-template-areas:
         "car-images car-specs"
-        "car-specs car-description";
+        "car-description car-specs";
     grid-template-columns: 2fr 1fr;
     gap: 20px;
     width: 80%;
