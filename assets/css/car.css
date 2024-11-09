@@ -165,27 +165,63 @@ figure {
     cursor: pointer;
     font-size: 1em;
 }
-@media (max-width: 768px) {
+/* Light Mode (default) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #000; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: #E0E0E0; 
+    }
+
     main {
-        grid-template-areas:
-            "car-images"
-            "car-specs"
-            "car-description";
-        grid-template-columns: 1fr;
-        width: 95%;
+        background-color: #444;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
 
-    figure {
-        grid-template-columns: 1fr;
+    .car-specs h2,
+    .car-description h3 {
+        color: #E0E0E0; 
     }
 
-    .car-specs ul {
-        flex-direction: column;
-        gap: 10px;
+    .car-specs p,
+    .car-description p {
+        color: #aaa;
     }
 
-    .car-description h3,
-    .car-specs h2 {
-        font-size: 1.5rem;
+    .car-specs ul li {
+        background-color: #555;
+        color: #E0E0E0;
+        border: 1px solid #666;
+    }
+
+    .rental-period input[type="datetime-local"],
+    .rental-period input[type="text"] {
+        background-color: #555;
+        color: #E0E0E0;
+        border: 1px solid #666;
+    }
+
+    .car-description button,
+    .rental-period button {
+        background-color: #007bff;
+        color: #E0E0E0;
+    }
+    .ratings {
+        color: #E0E0E0;
+    }
+    .ratings p {
+        color: #E0E0E0; 
+    }
+    .ratings .star {
+        color: #FFD700;
     }
 }
+
