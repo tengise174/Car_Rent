@@ -37,8 +37,57 @@
             <div class="details">
                 <h3>Jeep Wrangler Unlimited 2019</h3>
                 <p>Түрээсийн эхлэх хугацаа: 06/20/2024<br>Түрээсийн дуусах хугацаа: 06/30/2024<br>Төлөв: Хүлээлгэн өгсөн</p>
-                <button>Сэтгэгдэл үлдээх</button>
+                <button onclick="openReviewPopup()">Сэтгэгдэл үлдээх</button>
+        </section>
+
+        <div id="reviewPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeReviewPopup()">&times;</span>
+                <h3>Сэтгэгдэл үлдээх</h3>
+                
+                <div class="rating-section">
+                    <label>Тав тух:</label>
+                    <div class="stars" data-category="comfort">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    
+                    <label>Засвар үйлчилгээ:</label>
+                    <div class="stars" data-category="service">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <label>Цэвэр цэмцгэр байдал:</label>
+                    <div class="stars" data-category="cleanliness">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <label>Харилцаа:</label>
+                    <div class="stars" data-category="communication">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+
+                <button onclick="submitReview()">Илгээх</button>
             </div>
+        </div>
+
+
         </section>
 
         <section class="rental-item">
@@ -46,8 +95,57 @@
             <div class="details">
                 <h3>Lexus SUV Fiyat 2022</h3>
                 <p>Түрээсийн эхлэх хугацаа: 08/10/2024<br>Түрээсийн дуусах хугацаа: 08/20/2024<br>Төлөв: Хүлээлгэн өгсөн</p>
-                <button>Сэтгэгдэл үлдээх</button>
+                <button onclick="openReviewPopup()">Сэтгэгдэл үлдээх</button>
+        </section>
+
+        <div id="reviewPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeReviewPopup()">&times;</span>
+                <h3>Сэтгэгдэл үлдээх</h3>
+                
+                <div class="rating-section">
+                    <label>Тав тух:</label>
+                    <div class="stars" data-category="comfort">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    
+                    <label>Засвар үйлчилгээ:</label>
+                    <div class="stars" data-category="service">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <label>Цэвэр цэмцгэр байдал:</label>
+                    <div class="stars" data-category="cleanliness">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <label>Харилцаа:</label>
+                    <div class="stars" data-category="communication">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+
+                <button onclick="submitReview()">Илгээх</button>
             </div>
+        </div>
+
+
         </section>
 
         <section class="rental-item">
@@ -55,8 +153,57 @@
             <div class="details">
                 <h3>2024 Toyota Land Cruiser 300</h3>
                 <p>Түрээсийн эхлэх хугацаа: 09/01/2024<br>Түрээсийн дуусах хугацаа: 09/03/2024<br>Төлөв: Хүлээлгэн өгсөн</p>
-                <button>Сэтгэгдэл үлдээх</button>
+                <button onclick="openReviewPopup()">Сэтгэгдэл үлдээх</button>
+        </section>
+
+        <div id="reviewPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeReviewPopup()">&times;</span>
+                <h3>Сэтгэгдэл үлдээх</h3>
+                
+                <div class="rating-section">
+                    <label>Тав тух:</label>
+                    <div class="stars" data-category="comfort">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    
+                    <label>Засвар үйлчилгээ:</label>
+                    <div class="stars" data-category="service">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <label>Цэвэр цэмцгэр байдал:</label>
+                    <div class="stars" data-category="cleanliness">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <label>Харилцаа:</label>
+                    <div class="stars" data-category="communication">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+
+                <button onclick="submitReview()">Илгээх</button>
             </div>
+        </div>
+
+
         </section>
     </main>
 <footer>
@@ -77,5 +224,6 @@
         </ul>
     </footer>
     <script src="./assets/js/dropmenu.js"></script>
+    <script src="./assets/js/rating.js"></script>
 </body>
 </html>
