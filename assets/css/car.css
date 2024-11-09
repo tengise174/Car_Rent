@@ -251,11 +251,11 @@ body {
 }
 
 @media screen and (max-width: 932px;) and (orientation:portrait){
-    .large-image {
+    .car-description {
         width: 100%;
     }
     .car-specs {
-        margin-bottom: 50px;
+        margin-bottom: 100%;
     }
 }
 
