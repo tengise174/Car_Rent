@@ -250,16 +250,12 @@ body {
     }
 }
 
-/* Rotate Animation */
-.car-description h3::after {
-    content: '▼';
-    font-size: 1rem;
-    margin-left: 0.5rem;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.car-description h3:hover::after {
-    transform: rotate(180deg);
+@media screen and (max-width: 932px;) and (orientation:portrait){
+    .large-image {
+        width: 100%;
+    }
+    .car-specs {
+        margin-bottom: 50px;
+    }
 }
 
