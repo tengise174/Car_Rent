@@ -225,3 +225,41 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    main {
+        grid-template-areas:
+            "car-images"
+            "car-specs"
+            "car-description";
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    figure {
+        grid-template-columns: 1fr;
+    }
+
+    .car-specs ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .car-description h3,
+    .car-specs h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Rotate Animation */
+.car-description h3::after {
+    content: '▼';
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.car-description h3:hover::after {
+    transform: rotate(180deg);
+}
+
