@@ -24,6 +24,7 @@ h2 {
     display: flex;
     align-items: center;
     background-color: #fcfcfc;
+    height: 250px;
     padding: 5px;
     margin-top: 20px;
     border-radius: 10px;
@@ -34,29 +35,31 @@ h2 {
     width: 300px;
     height: 200px;
     border-radius: 5px;
-    margin-right: 30px;
+    margin-left: 20px;
 }
 
 .rental-item .details {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin-top: 150px;
+    margin-left: 30px;
 }
 
 .rental-item h3 {
     font-size: 1.5em;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .rental-item p {
     font-size: 1em;
     color: #555;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .rental-item button {
     align-self: end;
-	 margin-bottom: 100px;
+	 margin-bottom: 190px;
 	 margin-right: 50px;
     background-color: #007bff;
     color: #fff;
