@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filteredCars = filterCars(cars, filters);
     setDropdownValues(filters);
     renderCars(filteredCars);
+    setListenerCar();
 
     const filterButton = document.querySelector(".search-button");
     filterButton.addEventListener('click', (event) => {
         event.preventDefault();
         handleSearch(cars);
-    });
+    });    
 });
 
 function getQueryParams() {
@@ -61,4 +62,27 @@ function handleSearch(cars) {
 
     const filteredCars = filterCars(cars, filters);
     renderCars(filteredCars);
+    setListenerCar();
+}
+
+function setListenerCar() {
+    const carItems = document.querySelectorAll(".car-item");
+    carItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const carId = item.getAttribute('data-id');
+            let url = `car.html?id=${carId}`;
+
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+
+            if (startDate) {
+                url += `&startDate=${encodeURIComponent(startDate)}`;
+            }
+            if (endDate) {
+                url += `&endDate=${encodeURIComponent(endDate)}`;
+            }
+
+            window.location.href = url;
+        })
+    })
 }

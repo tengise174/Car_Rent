@@ -1,5 +1,5 @@
 export class Car {
-    constructor({id, location ,make, model, year, priceCategory, type, transmission, seats, rating, trips, dailyRate, image, startDate, endDate}) {
+    constructor({id, location ,make, model, year, priceCategory, type, transmission, seats, rating, trips, dailyRate, image, startDate, endDate, fuelConsumption, doors, odometer, tires, motor, ratings, desc, moreDesc}) {
         this.id = id;
         this.location = location;
         this.make = make;
@@ -12,15 +12,23 @@ export class Car {
         this.rating = rating;
         this.trips = trips;
         this.dailyRate = dailyRate;
-        this.image = image[0];
+        this.image = image;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.fuelConsumption = fuelConsumption;
+        this.doors = doors;
+        this.odometer = odometer;
+        this.tires = tires;
+        this.motor = motor;
+        this.ratings = ratings;
+        this.desc = desc;
+        this.moreDesc = moreDesc;
     }
 
     createCarItem() {
         return `
-            <article class="car-item">
-                <img src="${this.image}" alt="${this.make} ${this.model} ${this.year}">
+            <article class="car-item" data-id=${this.id}>
+                <img src="${this.image[0]}" alt="${this.make} ${this.model} ${this.year}">
                 <div>
                     <h3>${this.make} ${this.model} ${this.year}</h3>
                     <p>(${this.trips} аялал)</p>
@@ -31,7 +39,6 @@ export class Car {
             </article>
         `;
     }
-    
 }
 
 export async function fetchCarsData() {
@@ -50,9 +57,7 @@ export async function fetchCarsData() {
     if(!response.ok){
         throw new Error(`HTTP error!`);
     } 
-
     const data = await response.json();
-
     return data.record.cars.map(car => new Car(car));
 }
 

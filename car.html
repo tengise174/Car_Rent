@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./assets/css/header_footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
      <link rel="stylesheet" href="./assets/css/car.css">
-     <link rel="stylesheet" href="header_footer.css">
     <title>Car</title>
 </head>
 
@@ -35,50 +34,35 @@
         </nav>
         <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
     </header>
+
     <main>
-        <article>
-            <h2>Jeep Wrangler Unlimited 2019</h2>
-            <p>180,000₮/өдөр</p>
+        <article id="car-detail">
+            <h2 id="car-title">Jeep Wrangler Unlimited 2019</h2>
+            <p><span id="car-price">0</span>/өдөр</p>
 
             <figure>
-                <img src="https://cdn.jdpower.com/JDPA_2019-Jeep-Wrangler-Unlimited-Silver-Front-Quarter.jpg" alt="Main Car Image" class="large-image" >
-                <img src="https://cdn.jdpower.com/JDPA_2019-Jeep-Wrangler-Unlimited-Silver-Front-Quarter.jpg" alt="Small Car Image 1" class="small-image-1" >
-                <img src="https://cdn.jdpower.com/JDPA_2019-Jeep-Wrangler-Unlimited-Silver-Front-Quarter.jpg" alt="Small Car Image 1" class="small-image-1" >
+                <img id="large-image" src="https://cdn.jdpower.com/JDPA_2019-Jeep-Wrangler-Unlimited-Silver-Front-Quarter.jpg" alt="Main Car Image" class="large-image" >
+                <img id="small-image-1" src="https://cdn.jdpower.com/JDPA_2019-Jeep-Wrangler-Unlimited-Silver-Front-Quarter.jpg" alt="Small Car Image 1" class="small-image-1" >
+                <img id="small-image-2" src="https://cdn.jdpower.com/JDPA_2019-Jeep-Wrangler-Unlimited-Silver-Front-Quarter.jpg" alt="Small Car Image 1" class="small-image-1" >
             </figure>
-        <section class="car-description">
-    <h3>Нэмэлт тайлбар</h3>
-    <p>Хар саарал металл өнгөтэй, неец камер, аудио холболт, Apple CarPlay, Android Audio гэх мэт олон гайхалтай функцууд багтсан.</p>
-    <p id="extra-text" style="display: none;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium dolores earum et ipsum quaerat cupiditate impedit debitis labore? Vero, distinctio!</p>
-    <button onclick="toggleText()">More</button>
-    </section>
+            <section class="car-description">
+                <h3>Нэмэлт тайлбар</h3>
+                <p id="car-description">Хар саарал металл өнгөтэй, неец камер, аудио холболт, Apple CarPlay, Android Audio гэх мэт олон гайхалтай функцууд багтсан.</p>
+                <p id="extra-text" style="display: none;">ADDhvhefobhv bohrgobhnor fbgihrowirtbnjg bghirnwbhijrwn</p>
+                <button onclick="toggleText()">More</button>
             </section>
-            </article>
-    <script>
-        function toggleText() {
-            const text = document.getElementById("extra-text");
-            const button = document.querySelector(".description button");
-            
-            if (text.style.display === "none") {
-                text.style.display = "block";
-                button.textContent = "Less";
-            } else {
-                text.style.display = "none";
-                button.textContent = "More";
-            }
-        }
-    </script>
-
+        </article>
 
         <article>
             <section class="car-specs" >
             <h2>Үзүүлэлт</h2>
             <ul>
-                <li><i class="fas fa-gas-pump"></i> 15 л/100 км</li>
-                <li><i class="fas fa-door-open"></i> 4 хаалга</li>
-                <li><i class="fas fa-user-friends"></i> 5 суудал</li>
-                <li><i class="fa-solid fa-record-vinyl"></i> Өвөл</li>
-                <li><i class="fas fa-cogs"></i> 3.6 л</li>
-                <li><i class="fas fa-tachometer-alt"></i> 14567 км</li>
+                <li><i class="fas fa-gas-pump"></i><span id="fuel-consumption"> 0</span> л/100 км</li>
+                <li><i class="fas fa-door-open"></i><span id="doors"> 0</span> хаалга</li>
+                <li><i class="fas fa-user-friends"></i><span id="seats"> 0</span> суудал</li>
+                <li><i class="fa-solid fa-record-vinyl"></i><span id="tires"> Unknown</span></li>
+                <li><i class="fas fa-cogs"></i><span id="engine-volume"> 0</span> л</li>
+                <li><i class="fas fa-tachometer-alt"></i><span id="odometer"> 0</span> км</li>
             </ul>
             </section>
 
@@ -86,26 +70,24 @@
 
         <section class="ratings">
             <h3>Сэтгэгдэл 124 хүн</h3>
-            <p><span class="star">★</span> 5.0 Тав тух</p>
-            <p><span class="star">★</span> 4.7 Засвар үйлчилгээ</p>
-            <p><span class="star">★</span> 5.0 Цэвэр цэмцгэр байдал</p>
-            <p><span class="star">★</span> 5.0 Харилцаа</p>
+            <p><span class="star">★ </span><span id="comfort"></span> Тав тух</p>
+            <p><span class="star">★ </span><span id="maintenance"></span> Засвар үйлчилгээ</p>
+            <p><span class="star">★ </span><span id="cleanliness"></span> Цэвэр цэмцгэр байдал</p>
+            <p><span class="star">★ </span><span id="communication"></span> Харилцаа</p>
         </section>
 
         <section class="rental-period">
-        <h3>Түрээслэх хугацаа</h3>
-        <form>
-            <label for="start-date">Эхлэх</label>
-            <input type="datetime-local" id="start-date">
-            <label for="end-date">Дуусах</label>
-            <input type="datetime-local" id="end-date">
-            <label for="location">Байршил</label>
-            <input type="text" id="location" placeholder="Location">
-            <a href="./wishlist.html">
+            <h3>Түрээслэх хугацаа</h3>
+            <form>
+                <label for="start-date">Эхлэх</label>
+                <input type="datetime-local" id="start-date">
+                <label for="end-date">Дуусах</label>
+                <input type="datetime-local" id="end-date">
+                <label for="location">Байршил</label>
+                <input type="text" id="location" placeholder="Location">
                 <button>Захиалах</button>
-            </a>
-        </form>
-    </section>
+            </form>
+        </section>
     </main>
     
     <footer>
@@ -125,8 +107,29 @@
             <li><a href="./privacy.html">Гэрээ</a></li>
         </ul>
     </footer>
+
+    <script>
+        function toggleText() {
+            const text = document.getElementById("extra-text");
+            const button = document.querySelector(".description button");
+            
+            if (text.style.display === "none") {
+                text.style.display = "block";
+                button.textContent = "Less";
+            } else {
+                text.style.display = "none";
+                button.textContent = "More";
+            }
+        }
+    </script>
+
     <script src="./assets/js/dropmenu.js"></script>
+    <script type="module" src="./assets/js/carDetails.js"></script>
 </body>
 
 </html>
+
+
+
+
 

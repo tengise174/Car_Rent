@@ -95,6 +95,10 @@ figure {
     border-radius: 8px;
 }
 
+.car-specs ul li i {
+    margin-right: 10px;
+}
+
 .car-description {
     grid-area: car-description;
     margin-top: 20px;
