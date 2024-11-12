@@ -35,43 +35,30 @@
     </header>
 
     <main>
-        <section class="wishlist">
+        <section id="wishlist-container" class="wishlist">
             <h1>Car Wishlist</h1>
 
-            <article class="car-item">
-                <input type="checkbox" id="vehicle1">
+            <!-- <article class="car-item">
+                <input type="checkbox">
                 <div class="content">   
-                    <img src="./assets/img/car1.jfif" alt="Car image">
+                    <img src="${car.image}" alt="Car image">
                     <figure>
-                        <h2>Car Name</h2>
-                        <figcaption>Car description goes here.</figcaption>
+                        <h2>${car.name}</h2>
+                        <figcaption>${car.price} /өдөр</figcaption>
                     </figure>
-                    <form>
-                        <label for="from">From:</label>
-                        <input type="date" id="from" name="from">
-                        <label for="until">Until:&nbsp</label>
-                        <input type="date" id="until" name="from">
+                    <form class="date-form">
+                        <div class="form-group">
+                            <label for="from">From:</label>
+                            <input type="datetime-local" value="${car.startDate}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="until">Until:</label>
+                            <input type="datetime-local" value="${car.endDate}" disabled>
+                        </div>
                     </form>
+                    <button class="remove-btn" data-index="${index}">Remove</button>
                 </div>
-            </article>
-
-            <article class="car-item">
-                <input type="checkbox" id="vehicle2">
-                <div class="content">
-                    <img src="./assets/img/car1.jfif" alt="Car image">
-                    <figure>
-                        <h2>Car Name</h2>
-                        <figcaption>Car description goes here.</figcaption>
-                    </figure>
-                    <form>
-                        <label for="from1">From:</label>
-                        <input type="date" id="from1">
-
-                        <label for="until">Until:&nbsp</label>
-                        <input type="date" id="until1">
-                    </form>
-                </div>
-            </article>
+            </article> -->
 
         </section>
 
@@ -127,6 +114,7 @@
             window.location.href="./CancelOrExtend.html";
         }
     </script>
+    <script type="module" src="./assets/js/app.js"></script>
 </body>
 
 </html>

@@ -78,14 +78,14 @@
 
         <section class="rental-period">
             <h3>Түрээслэх хугацаа</h3>
-            <form>
+            <form action="./wishlist.html">
                 <label for="start-date">Эхлэх</label>
                 <input type="datetime-local" id="start-date">
                 <label for="end-date">Дуусах</label>
                 <input type="datetime-local" id="end-date">
                 <label for="location">Байршил</label>
                 <input type="text" id="location" placeholder="Location">
-                <button>Захиалах</button>
+                <button id="btnAddToCart">Захиалах</button>
             </form>
         </section>
     </main>
@@ -125,6 +125,7 @@
 
     <script src="./assets/js/dropmenu.js"></script>
     <script type="module" src="./assets/js/carDetails.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
 </body>
 
 </html>
