@@ -28,7 +28,7 @@ export function displayWishlist() {
                             <input type="datetime-local" value="${car.endDate}" disabled>
                         </div>
                     </form>
-                    <button class="remove-btn" data-index="${index}">Remove</button>
+                    <button type="button" class="remove-btn" data-index="${index}">Remove</button>
                 </div>
             `;
             wishlistContainer.appendChild(carItem);

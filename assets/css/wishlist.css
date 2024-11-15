@@ -7,6 +7,9 @@
     --light-blue: #007bff;
     --dark-blue: #0056b3;
     --yellow: #ffeb3b;
+
+    --dark-promo-background:#222;
+
 }
 
 body {
@@ -173,6 +176,16 @@ button:hover {
     border-radius: 5px;
     font-size: 14px;
 }
+.content{
+    display: flex;
+    align-items: center;
+    padding: 2vw;
+}
+.remove-btn{
+    width: fit-content;
+    height: auto;
+    margin-top: 5vh;
+}
 @media (prefers-color-scheme: dark){
     
     body {
@@ -181,7 +194,7 @@ button:hover {
     }
     
     #promo-code {
-        background-color: #222;
+        background-color: var(--dark-promo-background);
         color: var(--text-color);
         border: 1px solid var(--border-color);
     }
@@ -190,7 +203,14 @@ button:hover {
         background-color: #1E1E1E;
         box-shadow: 0 4px 8px var(--shadow-color);
     }
-    
+    .car-item{
+        background-color: black;
+        color: var(--text-color);
+    }
+    .content{
+        background-color: #1E1E1E;
+        color: white;
+    }
     button[type="submit"], 
     button[type="button"] {
         background-color: var(--light-blue);
