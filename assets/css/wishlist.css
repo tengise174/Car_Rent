@@ -227,11 +227,6 @@ button:hover {
         border-bottom: 2px solid var(--dark-blue);
     }
 }
-@media only screen and (max-width: 932px) {
-    .container {
-        flex-direction: column;
-    }
-}
 @media screen and (max-width:932px) and (orientation:portrait){
     .wishlist{
         width: 100%;
@@ -240,6 +235,14 @@ button:hover {
         flex-direction: column;
     }
     .content{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:932px) and (orientation: landscape){
+    .wishlist{
+        width: fit-content;
+    }
+    main{
         flex-direction: column;
     }
 }
