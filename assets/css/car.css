@@ -254,4 +254,110 @@ body {
     }
 }
 
+/*gar utas*/
+@media (max-width: 768px) {
+    main {
+        grid-template-areas:
+            "car-images"
+            "car-description"
+            "car-specs";
+        grid-template-columns: 1fr;
+        gap: 15px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    figure {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "large-image"
+            "small-image-1"
+            "small-image-2";
+        gap: 10px;
+    }
+
+    .large-image {
+        height: 250px;
+    }
+
+    .small-image-1,
+    .small-image-2 {
+        height: 120px;
+    }
+
+    .car-specs {
+        margin-top: 0;
+    }
+
+    .car-specs ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .car-description h3,
+    .car-specs h2 {
+        font-size: 1.2rem;
+    }
+
+    .car-description p {
+        font-size: 1rem;
+    }
+
+    .ratings {
+        margin: 0;
+    }
+
+    .ratings p {
+        font-size: 1rem;
+    }
+
+    .ratings .star {
+        font-size: 1.2rem;
+    }
+
+    .rental-period {
+        padding-right: 0;
+    }
+
+    .rental-period h3 {
+        font-size: 1.2rem;
+    }
+
+    .rental-period input,
+    .rental-period button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .rental-period input {
+        margin-top: 5px;
+    }
+
+    .car-description button,
+    .rental-period button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        width: auto;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 0;
+    }
+
+    footer .logo-img {
+        width: 70px;
+        margin: 10px auto;
+    }
+}
+
 
