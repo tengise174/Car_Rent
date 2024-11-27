@@ -255,7 +255,42 @@ body {
 }
 
 /*gar utas*/
-@media (max-width: 768px) {
+@media screen and (max-width: 932px) {
+    #menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--main-color);
+        transition: all 1s ease-in-out;        
+    }
+
+    #menu ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+
+    .active-page {
+        background-color: inherit;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid white;
+    }
+
+    .logo-img {
+        width: 10rem;
+    }
+
+    .close-menu, .open-menu {display: block;}
+    #check:checked ~ #menu {right: 0;}    
+}
+@media screen and (max-width: 932px) and (orientation: landscape) {
     main {
         grid-template-areas:
             "car-images"
@@ -357,6 +392,19 @@ body {
     footer .logo-img {
         width: 70px;
         margin: 10px auto;
+    }
+}
+
+
+@media screen and (max-width: 932px) and (orientation: portrait) {
+    footer ul:last-of-type {
+        flex-direction: column;
+        border: none;
+    }
+
+    footer ul:last-of-type li {
+        border: none;
+        margin-top: 1rem;
     }
 }
 
