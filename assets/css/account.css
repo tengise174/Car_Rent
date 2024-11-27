@@ -193,8 +193,14 @@ h1 {
 @media screen and (max-width: 932px) and (orientation: landscape) {
     /* Hevtee uyd hiih zuilsee bich */
     .container {
-        padding-top: 500px;
-        padding-bottom: 500px;
+        margin: auto;
+    background-color: #fff;
+    padding: 40px;
+    box-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 @media screen and (max-width: 932px) and (orientation: portrait) {
