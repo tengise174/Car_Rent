@@ -153,3 +153,55 @@ h1 {
 .edit-btn:hover, .save-btn:hover {
     background-color: #0056b3;
 }
+/*gar utas*/
+/* Гар утасны дэлгэцэнд тохиргоо */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo-img {
+        width: 100px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .edit-btn, .save-btn {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    footer .logo-img {
+        width: 80px;
+        margin: 10px auto;
+    }
+}
