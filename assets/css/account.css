@@ -154,54 +154,57 @@ h1 {
     background-color: #0056b3;
 }
 /*gar utas*/
-/* Гар утасны дэлгэцэнд тохиргоо */
-@media (max-width: 768px) {
-    header {
-        display: flex;
-        justify-content: space-between;
+@media screen and (max-width: 932px) {
+    #menu{
+        flex-direction: column;
         align-items: center;
-        padding: 10px 20px;
+        justify-content: start;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--main-color);
+        transition: all 1s ease-in-out;        
+    }
+
+    #menu ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+    }
+
+    .active-page {
+        background-color: inherit;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid white;
     }
 
     .logo-img {
-        width: 100px;
+        width: 10rem;
     }
 
-    nav ul {
-        display: flex;
+    .close-menu, .open-menu {display: block;}
+    #check:checked ~ #menu {right: 0;}    
+}
+
+@media screen and (max-width: 932px) and (orientation: landscape) {
+    /* Hevtee uyd hiih zuilsee bich */
+    container:
+        padding-top: 50px;
+        padding-bottom: 50px;
+}
+
+@media screen and (max-width: 932px) and (orientation: portrait) {
+    footer ul:last-of-type {
         flex-direction: column;
-        gap: 10px;
+        border: none;
     }
 
-    .container {
-        padding: 20px;
-        width: 90%;
-        font-size: 14px;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .edit-btn, .save-btn {
-        width: 100%;
-    }
-
-    footer {
-        font-size: 12px;
-        text-align: center;
-    }
-
-    footer ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    footer .logo-img {
-        width: 80px;
-        margin: 10px auto;
+    footer ul:last-of-type li {
+        border: none;
+        margin-top: 1rem;
     }
 }
