@@ -267,25 +267,10 @@ body {
 }
 @media screen and (max-width: 932px) and (orientation: landscape) {
     main {
-        grid-template-areas:
-            "car-images"
-            "car-description"
-            "car-specs";
-        grid-template-columns: 1fr;
-        gap: 15px;
         width: 70%;
         margin: 0 auto;
         padding: 10px;
         paadding-left: 10px;
-    }
-
-    figure {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "large-image"
-            "small-image-1"
-            "small-image-2";
-        gap: 10px;
     }
 
     .large-image {
@@ -309,6 +294,7 @@ body {
     .car-description h3,
     .car-specs h2 {
         font-size: 1.2rem;
+        position: center;
     }
 
     .car-description p {
