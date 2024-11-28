@@ -266,79 +266,70 @@ body {
     #check:checked ~ #menu {right: 0;}    
 }
 @media screen and (max-width: 932px) and (orientation: landscape) {
+    /* Mobile Layout */
+@media screen and (max-width: 768px) {
     main {
-        width: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
         margin: 0 auto;
         padding: 10px;
-        paadding-left: 10px;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .large-image {
-        height: 150px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
     }
 
     .small-image-1,
     .small-image-2 {
-        height: 90px;
-    }
-
-    .car-specs {
-        margin-top: 0;
+        width: 48%;
+        height: auto;
+        border-radius: 8px;
     }
 
     .car-specs ul {
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
     }
 
-    .car-description h3,
-    .car-specs h2 {
-        font-size: 1.2rem;
-        position: center;
-    }
-
-    .car-description p {
-        font-size: 1rem;
+    .car-specs ul li {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        padding: 10px;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 8px;
     }
 
     .ratings {
-        margin: 0;
-    }
-
-    .ratings p {
-        font-size: 1rem;
-    }
-
-    .ratings .star {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 
     .rental-period {
-        padding-right: 0;
+        padding: 0;
     }
 
-    .rental-period h3 {
-        font-size: 1.2rem;
+    .rental-period form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .rental-period input,
-    .rental-period button {
+    .rental-period input[type="datetime-local"],
+    .rental-period input[type="text"] {
         font-size: 0.9rem;
-        padding: 8px;
-        width: 80px;
     }
-
-    .rental-period input {
-        margin-top: 5px;
-    }
-
-    .car-description button,
-    .rental-period button {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-        width: 50px;
-    }
-
 }
 
 
