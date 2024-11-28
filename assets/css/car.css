@@ -276,6 +276,7 @@ body {
         width: 70%;
         margin: 0 auto;
         padding: 10px;
+        paadding-left: 10px;
     }
 
     figure {
@@ -338,6 +339,7 @@ body {
     .rental-period button {
         font-size: 0.9rem;
         padding: 8px;
+        width: 80px;
     }
 
     .rental-period input {
