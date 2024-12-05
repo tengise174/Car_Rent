@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="./assets/css/header_footer.css">
     <link rel="stylesheet" href="./assets/css/wishlist.css">
     <link rel="stylesheet" href="./assets/css/car_component.css">
+    <script type="module" src="./assets/js/wishlist_component.js"></script>
+    <script type="module" src="./assets/js/order_summary.js"></script>
+    <script type="module" src="./assets/js/GlobalState.js"></script>
     <title>Car Wishlist</title>
 </head>
 
-<body>
+<body>  
     <header>
         <img class="logo-img" src="./assets/img/logo.png" alt="logo">
         <input type="checkbox" id="check" aria-label="Toggle menu">
@@ -35,83 +38,13 @@
     </header>
 
     <main>
-        <section id="wishlist-container" class="wishlist">
-            <h1>Car Wishlist</h1>
-
-            <!-- <article class="car-item">
-                <input type="checkbox">
-                <div class="content">   
-                    <img src="${car.image}" alt="Car image">
-                    <figure>
-                        <h2>${car.name}</h2>
-                        <figcaption>${car.price} /өдөр</figcaption>
-                    </figure>
-                    <form class="date-form">
-                        <div class="form-group">
-                            <label for="from">From:</label>
-                            <input type="datetime-local" value="${car.startDate}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="until">Until:</label>
-                            <input type="datetime-local" value="${car.endDate}" disabled>
-                        </div>
-                    </form>
-                    <button class="remove-btn" data-index="${index}">Remove</button>
-                </div>
-            </article> -->
-
-        </section>
-
-        <aside class="order-summary">
-            <h2>Order Summary</h2>
-            <p>Total: <span>$150</span></p>
-
-            <form class="promo-form">
-                <label for="promo-code">Add promo code:</label>
-                <div class="input-group">
-                <input type="text" id="promo-code" placeholder="Enter code">
-                <button type="submit">Apply</button>
-                </div>
-            </form>
-
-            <button type="button">Go to Checkout</button>
-            <button type="cancel_button" onclick="navigateToCancel()">Cancel Order?</button>
-
-            <section class="payment-methods">
-                <h3>Payment Methods</h3>
-                <ul>
-                    <li><i class="fab fa-cc-visa fa-2x"></i></li>
-                    <li><i class="fab fa-cc-paypal fa-2x"></i></li>
-                    <li><i class="fab fa-cc-mastercard fa-2x"></i></li>
-                </ul>
-            </section>
-        </aside>
+        <wishlist-container>
+            <span slot="wishlist-title">My Favorite Cars</span>
+            <span slot="no-items-message">Your wishlist is empty. Add some cars!</span>
+        </wishlist-container>
+        <order-summary show-car-total="true" id="summary"></order-summary>
     </main>
-    <footer>
-        <ul>
-            <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-        </ul>
-        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
-        <p>Copyright &copy; 2024 CarRent, Inc</p>
-        <ul>
-            <li><a href="./privacy.html">Мэдээллийн хамгаалалт</a></li>
-            <li><a href="./privacy.html">Хэрэглэгчийн эрх үүрэг</a></li>
-            <li><a href="./privacy.html">Төлбөрийн нөхцөл</a></li>
-            <li><a href="./privacy.html">Даатгал</a></li>
-            <li><a href="./privacy.html">Гэрээ</a></li>
-        </ul>
-    </footer>
-
-    <script src="./assets/js/dropmenu.js"></script>
-    <script>
-        function navigateToCancel(){
-            window.location.href="./CancelOrExtend.html";
-        }
-    </script>
-    <script type="module" src="./assets/js/app.js"></script>
 </body>
+
 
 </html>

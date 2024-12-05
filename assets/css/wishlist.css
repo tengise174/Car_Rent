@@ -8,8 +8,8 @@
     --dark-blue: #0056b3;
     --yellow: #ffeb3b;
 
-    --dark-promo-background:#222;
-
+    --dark-text-color: white;
+    --dark-promo-background: #222;
 }
 
 body {
@@ -17,9 +17,11 @@ body {
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
-
     display: flex;
     flex-direction: column;
+
+    background-color: var(--background-color);
+    color: var(--main-color);
 }
 
 main {
@@ -36,213 +38,26 @@ main {
     align-items: center;
 }
 
-.wishlist {
-    flex: 2;
-    max-height: 40rem; 
-    overflow-y: auto; 
-    overflow-x: hidden;
-}
 
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-}
-
-.wishlist h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--light-blue);
-    padding-bottom: 10px;
-}
-
-.promo-form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.input-group {
-    display: flex;
-    gap: 10px;
-}
-.promo-form{
-margin-top: 10px;
-}
-
-.promo-form button {
-    flex-shrink: 0;
-    width: 80px;
-}
-
-form label {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-input[type="date"] {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 250px;
-}
-
-.order-summary {
-    flex: 1;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-left: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.order-summary h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.order-summary p {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.order-summary span {
-    font-weight: bold;
-}
-
-#promo-code {
-    width: calc(100% - 20px);
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-.cancel-button{
-    background-color: var(--light-blue);
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button[type="submit"] {
-    background-color: var(--light-blue);
-    color: white;
-    border-radius: 20px;
-}
-
-button[type="button"] {
-    background-color: var(--light-blue);
-    color: white;
-    border-radius: 20px;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-.payment-methods h3 {
-    margin-top: 15px;
-    font-size: 18px;
-}
-
-.payment-methods ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-}
-
-.payment-methods li {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-.content{
-    display: flex;
-    align-items: center;
-    padding: 2vw;
-}
-.remove-btn{
-    width: 100%;
-    height: auto;
-}
-@media (prefers-color-scheme: dark){
-    
+@media (prefers-color-scheme: dark) {
     body {
-        background-color: #555;
-        color: #E0E0E0;
-    }
-    
-    #promo-code {
         background-color: var(--dark-promo-background);
-        color: var(--text-color);
-        border: 1px solid var(--border-color);
-    }
-    
-    .order-summary {
-        background-color: #1E1E1E;
-        box-shadow: 0 4px 8px var(--shadow-color);
-    }
-    .car-item{
-        background-color: black;
-        color: var(--text-color);
-    }
-    .content{
-        background-color: #1E1E1E;
-        color: white;
-    }
-    button[type="submit"], 
-    button[type="button"] {
-        background-color: var(--light-blue);
-        color: white;
-    }
-    
-    .payment-methods li {
-        background-color: #333;
-        color: var(--text-color);
-    }
-    .wishlist{
-        color:black
-    }
-    .wishlist h1{
-        border-bottom: 2px solid var(--dark-blue);
+        color: var(--dark-text-color);
     }
 }
-@media screen and (max-width:932px) and (orientation:portrait){
-    .wishlist{
-        width: 100%;
-    }
-    main{
+
+@media screen and (max-width:932px) and (orientation:portrait) {
+    main {
         flex-direction: column;
     }
-    .content{
+
+    .content {
         flex-direction: column;
     }
 }
-@media screen and (max-width:932px) and (orientation: landscape){
-    .wishlist{
-        width: fit-content;
-    }
-    main{
+
+@media screen and (max-width:932px) and (orientation: landscape) {
+    main {
         flex-direction: column;
     }
 }

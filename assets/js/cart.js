@@ -1,6 +1,5 @@
 // app.js
-import { addToWishlist , removeFromWishlist} from './car.js';
-import { displayWishlist } from './wishlist.js';
+import { addToWishlist } from './car.js';
 
 function setupAddToWishlistButton() {
     const btn = document.getElementById('btnAddToCart');
@@ -22,7 +21,8 @@ function setupAddToWishlistButton() {
                 price: document.getElementById('car-price').innerText,
                 image: document.getElementById('large-image').src,
                 startDate: startDate,
-                endDate: endDate
+                endDate: endDate,
+                isChecked: false,
             };
 
             addToWishlist(car);
@@ -31,24 +31,8 @@ function setupAddToWishlistButton() {
     }
 }
 
-function setupRemoveButtons() {
-    document.querySelectorAll('.remove-btn').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const index = event.target.getAttribute('data-index');
-            removeFromWishlist(index);
-            displayWishlist();
-            setupRemoveButtons(); 
-        });
-    });
-}
-
 function init() {
     setupAddToWishlistButton();
-
-    if (document.getElementById('wishlist-container')) {
-        displayWishlist();
-        setupRemoveButtons();  
-    }
 }
 
 init();
