@@ -10,10 +10,11 @@
 
     --dark-text-color: white;
     --dark-promo-background: #222;
+    --font: Arial, sans-serif
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font);
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;

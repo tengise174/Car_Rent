@@ -1,6 +1,28 @@
+:root {
+    --font-family: Arial, sans-serif;
+    --background-color-light: #f4f4f4;
+    --background-color-dark: #333;
+    --text-color-light: #000;
+    --text-color-dark: #E0E0E0;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --button-text-color: #fff;
+    --card-bg-light: #fff;
+    --card-bg-dark: #444;
+    --border-radius: 8px;
+    --shadow-light: 0 0 15px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 0 15px rgba(0, 0, 0, 0.5);
+    --star-color: #FFD700;
+    --input-bg-dark: #555;
+    --input-border-dark: #666;
+    --gap: 20px;
+    --small-gap: 10px;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: var(--font-family);
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
     margin: 0;
     padding: 0;
 }
@@ -9,14 +31,15 @@ main {
     display: grid;
     grid-template-areas:
         "car-images car-specs"
-        "car-description car-specs";
+        "car-description car-description";
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    gap: var(--gap);
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: var(--gap);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    background-color: var(--card-bg-light);
 }
 
 figure {
@@ -26,35 +49,24 @@ figure {
         "large-image small-image-1"
         "large-image small-image-2";
     grid-template-columns: 2fr 1fr;
-    gap: 10px;
+    gap: var(--small-gap);
     margin: 0;
 }
-.car-description button{
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    width: 70px;
-    height: 40px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
+
 .large-image {
     grid-area: large-image;
     width: 100%;
     height: 350px;
-    border-radius: 8px;
-    margin-top: 10px;
+    border-radius: var(--border-radius);
+    margin-top: var(--small-gap);
 }
 
 .small-image-1,
 .small-image-2 {
     width: 100%;
     height: 170px;
-    border-radius: 8px;
-    margin-top: 10px;
+    border-radius: var(--border-radius);
+    margin-top: var(--small-gap);
 }
 
 .car-specs {
@@ -63,13 +75,13 @@ figure {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--small-gap);
 }
 
 .car-specs h2 {
     font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--text-color-light);
+    margin-bottom: var(--small-gap);
 }
 
 .car-specs p {
@@ -80,7 +92,7 @@ figure {
 .car-specs ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--small-gap);
     list-style-type: none;
     padding: 0;
 }
@@ -90,24 +102,24 @@ figure {
     align-items: center;
     font-size: 1rem;
     padding: 5px 10px;
-    background-color: #f8f8f8;
+    background-color: var(--background-color-light);
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
 }
 
 .car-specs ul li i {
-    margin-right: 10px;
+    margin-right: var(--small-gap);
 }
 
 .car-description {
     grid-area: car-description;
-    margin-top: 20px;
+    margin-top: var(--gap);
 }
 
 .car-description h3 {
     font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--text-color-light);
+    margin-bottom: var(--small-gap);
 }
 
 .car-description p {
@@ -115,84 +127,105 @@ figure {
     color: #555;
 }
 
+.car-description button {
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: var(--small-gap);
+}
+
+.car-description button:hover {
+    background-color: var(--button-hover-bg);
+}
+.lower{
+    display: flex;
+    grid-column: span 2;
+    gap:var(--gap);
+    width: 100%;
+}
+
 .ratings {
-    margin-top: 20px;
-    margin-left: 30px;
-    color: #333; 
+    flex: 1;
+    padding: 10px;
+    color: var(--text-color-light);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
 }
 
 .ratings p {
     font-size: 1.2rem;
-    color: #333; 
 }
 
 .ratings .star {
-    color: #FFD700; 
+    color: var(--star-color);
     font-size: 1.5rem;
 }
 
 .rental-period {
-    margin-bottom: 50px;
-    padding-right: 100px; 
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--gap);
+    padding: 10px;
 }
 
 .rental-period h3 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: var(--small-gap);
 }
 
 .rental-period form {
     display: flex;
     flex-direction: column;
+    gap: var(--small-gap);
 }
 
 .rental-period label {
-    margin-top: 10px;
     font-size: 1rem;
 }
 
 .rental-period input[type="datetime-local"],
 .rental-period input[type="text"] {
     padding: 10px;
-    margin-top: 5px;
+    margin-top: var(--small-gap);
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-size: 1rem;
 }
-.rental-period button{
-    margin-top: 10px;
-    background-color: #007bff;
-    color: #fff;
+
+.rental-period button {
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 1em;
 }
-/* Light Mode (default) */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #000; 
-    margin: 0;
-    padding: 0;
+
+.rental-period button:hover {
+    background-color: var(--button-hover-bg);
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #333;
-        color: #E0E0E0; 
+        background-color: var(--background-color-dark);
+        color: var(--text-color-dark);
     }
 
     main {
-        background-color: #444;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        background-color: var(--card-bg-dark);
+        box-shadow: var(--shadow-dark);
     }
 
     .car-specs h2,
     .car-description h3 {
-        color: #E0E0E0; 
+        color: var(--text-color-dark);
     }
 
     .car-specs p,
@@ -201,148 +234,130 @@ body {
     }
 
     .car-specs ul li {
-        background-color: #555;
-        color: #E0E0E0;
-        border: 1px solid #666;
+        background-color: var(--input-bg-dark);
+        color: var(--text-color-dark);
+        border: 1px solid var(--input-border-dark);
     }
 
     .rental-period input[type="datetime-local"],
     .rental-period input[type="text"] {
-        background-color: #555;
-        color: #E0E0E0;
-        border: 1px solid #666;
+        background-color: var(--input-bg-dark);
+        color: var(--text-color-dark);
+        border: 1px solid var(--input-border-dark);
     }
 
-    .car-description button,
-    .rental-period button {
-        background-color: #007bff;
-        color: #E0E0E0;
-    }
     .ratings {
-        color: #E0E0E0;
+        color: var(--text-color-dark);
     }
-    .ratings p {
-        color: #E0E0E0; 
-    }
+
     .ratings .star {
-        color: #FFD700;
+        color: var(--star-color);
     }
 }
-
-/*gar utas*/
-@media screen and (max-width: 932px) {
-    #menu{
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        width: 80%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 100;
-        background-color: var(--main-color);
-        transition: all 1s ease-in-out;        
-    }
-
-    #menu ul {
-        display: flex;
-        flex-direction: column;
-        margin-top: 3rem;
-    }
-
-    .active-page {
-        background-color: inherit;
-        border: none;
-        border-radius: 0;
-        border-bottom: 1px solid white;
-    }
-
-    .logo-img {
-        width: 10rem;
-    }
-
-    .close-menu, .open-menu {display: block;}
-    #check:checked ~ #menu {right: 0;}    
-}
-@media screen and (max-width: 932px) and (orientation: landscape) {
-    /* Mobile Layout */
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
     main {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 90%;
-        margin: 0 auto;
-        padding: 10px;
+        grid-template-areas:
+            "car-images"
+            "car-specs"
+            "car-description";
+        grid-template-columns: 1fr;
+        gap: var(--gap);
     }
 
     figure {
-        display: flex;
+        grid-template-areas:
+            "large-image"
+            "small-image-1"
+            "small-image-2";
+        grid-template-columns: 1fr;
+    }
+
+    .car-specs {
+        margin-top: 0;
+    }
+
+    .lower {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        gap: var(--small-gap);
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        padding: var(--small-gap);
     }
 
     .large-image {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+        height: 300px;
     }
 
     .small-image-1,
     .small-image-2 {
-        width: 48%;
-        height: auto;
-        border-radius: 8px;
+        height: 150px;
     }
 
-    .car-specs ul {
-        flex-direction: column;
-        gap: 10px;
+    .car-specs h2 {
+        font-size: 1.5rem;
+    }
+
+    .car-description h3 {
+        font-size: 1.3rem;
     }
 
     .car-specs ul li {
-        display: flex;
-        justify-content: space-between;
         font-size: 0.9rem;
-        padding: 10px;
-        background-color: #f8f8f8;
-        border: 1px solid #ddd;
-        border-radius: 8px;
+        padding: 5px;
     }
 
-    .ratings {
-        font-size: 0.9rem;
+    .car-description button {
+        padding: 8px 16px;
+        font-size: 0.9em;
     }
 
-    .rental-period {
-        padding: 0;
-    }
-
-    .rental-period form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .rental-period input[type="datetime-local"],
-    .rental-period input[type="text"] {
-        font-size: 0.9rem;
+    .lower {
+        width: 100%;
     }
 }
 
-
-@media screen and (max-width: 932px) and (orientation: portrait) {
-    footer ul:last-of-type {
-        flex-direction: column;
-        border: none;
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
     }
 
-    footer ul:last-of-type li {
-        border: none;
-        margin-top: 1rem;
+    main {
+        width: 100%;
+    }
+
+    .large-image {
+        height: 250px;
+    }
+
+    .small-image-1,
+    .small-image-2 {
+        height: 120px;
+    }
+
+    .car-specs h2,
+    .car-description h3 {
+        font-size: 1.2rem;
+    }
+
+    .car-specs ul li {
+        font-size: 0.8rem;
+    }
+
+    .car-description p {
+        font-size: 1rem;
+    }
+
+    .car-description button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .ratings p,
+    .rental-period h3 {
+        font-size: 1.2rem;
     }
 }
-
-
