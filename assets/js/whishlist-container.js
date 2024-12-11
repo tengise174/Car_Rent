@@ -78,7 +78,6 @@ class WishlistContainer extends HTMLElement {
                 <slot name="no-items-message">No cars in your Wishlist.</slot>
             </div>
         `;
-t
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
         this.shadowRoot.querySelector('.toggle-days-btn').addEventListener('click', () => {
