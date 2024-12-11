@@ -41,7 +41,9 @@ main {
     box-shadow: var(--shadow-light);
     background-color: var(--card-bg-light);
 }
-
+#car-title{
+    padding-bottom: 2vh;
+}
 figure {
     grid-area: car-images;
     display: grid;
@@ -93,7 +95,6 @@ figure {
     display: flex;
     flex-wrap: wrap;
     gap: var(--small-gap);
-    list-style-type: none;
     padding: 0;
 }
 
@@ -254,110 +255,90 @@ figure {
         color: var(--star-color);
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    /* Adjusting main grid layout */
     main {
-        grid-template-areas:
+        
+        display: grid;
+        grid-template-areas: 
             "car-images"
-            "car-specs"
+            "car-spec"
             "car-description";
         grid-template-columns: 1fr;
-        gap: var(--gap);
     }
 
+    /* Setting figure and images grid layout */
     figure {
-        grid-template-areas:
+        grid-area: car-images;
+        display: grid;
+        grid-template-areas: 
             "large-image"
             "small-image-1"
             "small-image-2";
         grid-template-columns: 1fr;
     }
 
+    /* Adjusting image styles for responsiveness */
+    .large-image {
+        grid-area: large-image;
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        margin-top: var(--small-gap);
+    }
+
+    #small-image-1 {
+        grid-area: small-image-1;
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        margin-top: var(--small-gap);
+    }
+
+    #small-image-2 {
+        grid-area: small-image-2;
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        margin-top: var(--small-gap);
+    }
+
+    /* Adjusting car-specs layout */
     .car-specs {
+        grid-area: car-spec;
+        display: flex;
+        flex-direction: column; /* Stack vertically */
         margin-top: 0;
     }
 
+    /* Adjusting lower layout */
     .lower {
+        margin-top: 2vh;
+        display: flex;
         flex-direction: column;
-        gap: var(--small-gap);
+        gap: var(--gap); /* Ensure spacing between elements */
     }
+
 }
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    /* Styles for tablets */
     main {
-        width: 90%;
-        padding: var(--small-gap);
+        
+        display: grid;
+        grid-template-areas: 
+            "car-images"
+            "car-spec"
+            "car-description";
+        grid-template-columns: 1fr;
     }
 
-    .large-image {
-        height: 300px;
-    }
 
-    .small-image-1,
-    .small-image-2 {
-        height: 150px;
-    }
 
-    .car-specs h2 {
-        font-size: 1.5rem;
-    }
-
-    .car-description h3 {
-        font-size: 1.3rem;
-    }
-
-    .car-specs ul li {
-        font-size: 0.9rem;
-        padding: 5px;
-    }
-
-    .car-description button {
-        padding: 8px 16px;
-        font-size: 0.9em;
-    }
-
-    .lower {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    main {
-        width: 100%;
-    }
-
-    .large-image {
-        height: 250px;
-    }
-
-    .small-image-1,
-    .small-image-2 {
-        height: 120px;
-    }
-
-    .car-specs h2,
-    .car-description h3 {
-        font-size: 1.2rem;
-    }
-
-    .car-specs ul li {
-        font-size: 0.8rem;
-    }
-
-    .car-description p {
-        font-size: 1rem;
-    }
-
-    .car-description button {
-        padding: 6px 12px;
-        font-size: 0.8em;
-    }
-
-    .ratings p,
-    .rental-period h3 {
-        font-size: 1.2rem;
+    /* Adjusting car-specs layout */
+    .car-specs {
+        grid-area: car-spec;
+        display: flex;
+        flex-direction: column; /* Stack vertically */
+        margin-top: 0;
     }
 }
