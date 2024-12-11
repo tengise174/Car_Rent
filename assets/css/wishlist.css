@@ -18,9 +18,6 @@ body {
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-
     background-color: var(--background-color);
     color: var(--main-color);
 }
@@ -30,15 +27,44 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 40px;
-    gap: 20px;
-    width: 80%;
-    max-width: 1200px;
     flex: 1;
-    margin: auto;
-    align-items: center;
+    min-height: 90vh;
+    padding: 0 8rem;
+    align-items: start;
 }
 
+#summary {
+    width: 35%;
+    margin-top: 5rem;
+    border-radius: 16px;
+}
+
+.car-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.car-item p {
+    margin-top: 8px;
+    text-align: left;
+    width: 100%;
+}
+
+.check-btn {
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    background-color: var(--active-color);
+    border: 1px solid white;
+    border-radius: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.check-btn:hover {
+    background-color: #367fff;
+}
 
 @media (prefers-color-scheme: dark) {
     body {
@@ -47,18 +73,23 @@ main {
     }
 }
 
-@media screen and (max-width:932px) and (orientation:portrait) {
+@media (max-width: 932px) {
     main {
         flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
 
-    .content {
-        flex-direction: column;
+    #summary {
+        width: 60%;
+        margin-top: 0;
     }
 }
 
+@media screen and (max-width:932px) and (orientation:portrait) {
+
+}
+
 @media screen and (max-width:932px) and (orientation: landscape) {
-    main {
-        flex-direction: column;
-    }
+
 }

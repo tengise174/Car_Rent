@@ -20,40 +20,45 @@ class OrderSummary extends HTMLElement {
         const parsedValue = value === 'true';
         if (this._showCarTotal !== parsedValue) {
             this._showCarTotal = parsedValue;
-            this.renderCarSummary(globalState.wishlist); 
+            this.renderCarSummary(globalState.wishlist);
         }
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'show-car-total') {
-            this.showCarTotal = newValue; 
+            this.showCarTotal = newValue;
         }
     }
 
     connectedCallback() {
         this.render();
-        globalState.addListener(this.update.bind(this)); 
+        globalState.addListener(this.update.bind(this));
+        this.renderCarSummary(globalState.wishlist);
+
+        document.addEventListener('toggle-days', this.toggleDayDifference.bind(this));
+        this.showDayDifference = false;
+    }
+
+    toggleDayDifference() {
+        this.showDayDifference = !this.showDayDifference;
         this.renderCarSummary(globalState.wishlist);
     }
 
     render() {
         this.innerHTML = `
             <style>
-                .order-summary { 
+                .order-summary {
                     font-family: Arial, sans-serif; 
                     margin: 20px; 
-                    background-color: var(--background-color); /* Default light mode */
-                    color: var(--main-color); /* Default light mode text color */
+                    background-color: var(--background-color); 
+                    color: var(--main-color); 
                     transition: background-color 0.3s, color 0.3s;
-                    border: ${this._carSelected ? '2px solid blue' : 'none'};
                 }
                 .car-item {
-                    background-color: var(--background-color); /* Default light mode */
+                    background-color: var(--background-color); 
                     color: var(--main-color);
+                    border-radius: 0;
                 }
-                .order-summary h2 { margin-bottom: 10px; }
-                .order-summary p { font-size: 1.2em; }
-                
                 /* Dark mode styles */
                 @media (prefers-color-scheme: dark) {
                     .order-summary {
@@ -67,9 +72,10 @@ class OrderSummary extends HTMLElement {
                 }
             </style>
             <div class="order-summary">
-                <h2>Order Summary</h2>
+                <h2>Захиалга</h2>
                 <div id="car-summary"></div>
-                <p><strong>Total: $<span id="total">0.00</span></strong></p>
+                <p style="margin-top: 2rem;"><strong>Нийт төлөх дүн: <span id="total">0.00</span>₮</strong></p>
+                <button class="check-btn">Баталгаажуулах</button>
             </div>
         `;
     }
@@ -80,29 +86,30 @@ class OrderSummary extends HTMLElement {
 
     renderCarSummary(wishlist) {
         const carSummaryContainer = this.querySelector('#car-summary');
-        carSummaryContainer.innerHTML = '';  
+        carSummaryContainer.innerHTML = '';
 
-        let netTotal = 0;  
-        let carSelected = false; 
+        let netTotal = 0;
+        let carSelected = false;
 
         wishlist.forEach(car => {
             if (car.isChecked) {
                 const startDate = new Date(car.startDate);
                 const endDate = new Date(car.endDate);
                 const dayDifference = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-                const carTotalPrice = car.price * dayDifference; 
+                const carTotalPrice = car.price * dayDifference;
 
-                netTotal += carTotalPrice;  
+                netTotal += carTotalPrice;
 
                 const carItem = document.createElement('div');
                 carItem.classList.add('car-item');
 
                 if (this.showCarTotal) {
                     carItem.innerHTML = `
-                        <p><strong>${car.name}</strong></p>
-                        <p><strong>Total: $${carTotalPrice.toFixed(2)}</strong></p>
+                        <p><strong>Нэр: ${car.name}</strong></p>
+                        <p><strong>Үнэ: ${carTotalPrice.toFixed(2)}₮</strong></p>
+                        ${this.showDayDifference ? `<p><strong>Түрээслэх өдөр: ${dayDifference}</strong></p>` : ''}
                     `;
-                } 
+                }
 
                 carSummaryContainer.appendChild(carItem);
                 carSelected = true;
@@ -111,7 +118,7 @@ class OrderSummary extends HTMLElement {
 
         this._carSelected = carSelected;
 
-        this.querySelector('.order-summary').style.border = carSelected ? '2px solid blue' : 'none';
+        this.style.border = carSelected ? '2px solid #98c9ef' : '1px solid #ccc';
 
         this.querySelector('#total').textContent = netTotal.toFixed(2);
     }

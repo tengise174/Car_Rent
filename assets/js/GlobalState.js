@@ -46,7 +46,7 @@ export default globalState;
 
 /// 3. Component attribute soligdohod?   -- order_summary-n netTotal
 /// 4. Component property                -- order summary showCarTotal propert
-
+/// 5. CustomEvent()                     -- Odor haruulah toggle buttond avsan
 /// 6. Undsen web iin css avah           -- Order Summary avc baigaa
 /// 7. Shadow Dom                        -- wishlist container
 /// 8. template and slot                 -- wishlist container-iin render dotor template bolon slot ashiglasan.
