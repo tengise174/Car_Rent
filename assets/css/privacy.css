@@ -5,6 +5,10 @@
     --background-color: #f9f9f9;
     --light-grey: #e0e0e0; 
     --text-color: #333;
+    
+    --bg-dark: #222;
+    --dark-text: #f9f9f9;
+    --dark-grey: #444;
 }
 
 * {
@@ -73,4 +77,34 @@ article p {
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--text-color);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bg-dark);
+        color: var(--dark-text);
+    }
+
+    main {
+        background-color: var(--bg-dark);
+        color: var(--dark-text);
+    }
+
+    section {
+        background-color: var(--dark-grey);
+        color: var(--dark-text);
+    }
+
+    nav a {
+        color: var(--dark-text);
+    }
+
+    nav a:hover {
+        border-bottom: 3px solid var(--hover-color);
+    }
+/*text ungiig uurchulj baina*/
+    section h2,article h2, article p {
+        color: var(--dark-text);
+    }
 }
