@@ -73,11 +73,10 @@ figure {
 
 .car-specs {
     grid-area: car-specs;
-    align-self: center;
-    margin-top: 120px;
     display: flex;
     flex-direction: column;
     gap: var(--small-gap);
+    margin-top: 4rem;
 }
 
 .car-specs h2 {
