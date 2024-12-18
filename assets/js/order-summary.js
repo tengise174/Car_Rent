@@ -37,6 +37,8 @@ class OrderSummary extends HTMLElement {
 
         document.addEventListener('toggle-days', this.toggleDayDifference.bind(this));
         this.showDayDifference = false;
+
+        this.querySelector('.check-btn').addEventListener('click', this.handlePayment.bind(this));
     }
 
     toggleDayDifference() {
@@ -122,6 +124,23 @@ class OrderSummary extends HTMLElement {
 
         this.querySelector('#total').textContent = netTotal.toFixed(2);
     }
+
+        async handlePayment() {
+            const totalAmount = this.querySelector('#total').textContent;
+            const response = await fetch('http://localhost:3000/api/payment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ amount: totalAmount }),
+            });
+    
+            if (response.status === 201) {
+                alert('Төлбөр амжилттай хийгдлээ!');
+            } else {
+                alert('Төлбөр хийх үед алдаа гарлаа.');
+            }
+        }
 }
 
 customElements.define('order-summary', OrderSummary);

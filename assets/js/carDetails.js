@@ -1,5 +1,3 @@
-import { fetchCarsData} from './carModule.js';
-
 document.addEventListener('DOMContentLoaded', async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const carId = urlParams.get('id');  
@@ -15,25 +13,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (endDate) {
         document.getElementById('end-date').value = endDate;
     }
-    const cars = await fetchCarsData(); 
-    const car = cars.find(c => c.id == carId); 
-    if (car) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/car?id=${carId}`);
+        if (!response.ok) throw new Error('Car not found');
+
+        const cars = await response.json();
+        const car = cars[0];
         updateCarDetails(car);
-    } else {
-        document.getElementById('car-details').innerHTML = '<p>Машин олдсонгүй.</p>';
+    } catch (error) {
+        document.getElementById('car-detail').innerHTML = '<p>Машин олдсонгүй.</p>';
     }
 });
 
 function updateCarDetails(car) {
+    console.log(car);
     document.getElementById('car-title').textContent = `${car.make} ${car.model} ${car.year}`;
-    document.getElementById('car-price').textContent = `${car.dailyRate}`;
+    document.getElementById('car-price').textContent = `${car.daily_rate}`;
     document.getElementById('large-image').src = car.image[0];
     document.getElementById('small-image-1').src = car.image[1];
     document.getElementById('small-image-2').src = car.image[2];
 
     document.getElementById('car-description').textContent = car.desc;
-    document.getElementById('extra-text').textContent = car.moreDesc;
-    document.getElementById('fuel-consumption').textContent = `${car.fuelConsumption}`;
+    document.getElementById('extra-text').textContent = car.more_desc;
+    document.getElementById('fuel-consumption').textContent = `${car.fuel_consumption}`;
     document.getElementById('doors').textContent = `${car.doors}`;
     document.getElementById('seats').textContent = `${car.seats}`;
     document.getElementById('tires').textContent = car.tires;

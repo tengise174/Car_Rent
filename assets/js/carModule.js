@@ -1,28 +1,28 @@
 export class Car {
-    constructor({id, location ,make, model, year, priceCategory, type, transmission, seats, rating, trips, dailyRate, image, startDate, endDate, fuelConsumption, doors, odometer, tires, motor, ratings, desc, moreDesc}) {
+    constructor({id, location ,make, model, year, price_category, type, transmission, seats, rating, trips, daily_rate, image, start_date, end_date, fuel_consumption, doors, odometer, tires, motor, ratings, desc, more_desc}) {
         this.id = id;
         this.location = location;
         this.make = make;
         this.model = model;
         this.year = year;
-        this.priceCategory = priceCategory;
+        this.priceCategory = price_category;
         this.type = type;
         this.transmission = transmission;
         this.seats = seats;
         this.rating = rating;
         this.trips = trips;
-        this.dailyRate = dailyRate;
+        this.dailyRate = daily_rate;
         this.image = image;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.fuelConsumption = fuelConsumption;
+        this.startDate = start_date;
+        this.endDate = end_date;
+        this.fuelConsumption = fuel_consumption;
         this.doors = doors;
         this.odometer = odometer;
         this.tires = tires;
         this.motor = motor;
         this.ratings = ratings;
         this.desc = desc;
-        this.moreDesc = moreDesc;
+        this.moreDesc = more_desc;
     }
 
     createCarItem() {
@@ -41,42 +41,26 @@ export class Car {
     }
 }
 
-export async function fetchCarsData() {
-    const url = 'https://api.jsonbin.io/v3/b/671fa22ce41b4d34e44a38de';
+export async function fetchCarsData(filters = {}) {
+    const queryParams = new URLSearchParams(filters).toString();
+    const url = `http://localhost:3000/api/car?${queryParams}`;
 
-    const apiKey = "$2a$10$fRL5.SIcepg5Dq1D5lWfzurg9Niu.tXWvdswZgPsrXzY2DV6MPz6y";
+    const response = await fetch(url);
 
-    const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Master-Key': apiKey
-        }
-    });
-
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error(`HTTP error!`);
-    } 
-    const data = await response.json();
-    return data.record.cars.map(car => new Car(car));
-}
+    }
 
-export function filterCars(cars, filters) {
-    return cars.filter(car => {
-        return (
-            (!filters.price || car.priceCategory === filters.price)
-            && (!filters.location || car.location === filters.location)
-            && (!filters.type || car.type === filters.type)
-            && (!filters.transmission || car.transmission === filters.transmission)
-            && (!filters.seats || car.seats === parseInt(filters.seats))
-            && (!filters.make || car.make === filters.make)
-            && (!filters.startDate || car.startDate <= filters.startDate)
-            && (!filters.endDate || car.endDate >= filters.endDate)
-        );
-    });
+    const data = await response.json();
+    console.log(data);
+    return data; 
 }
 
 export function renderCars(cars) {
     const carListContainer = document.querySelector('.car-list');
-    carListContainer.innerHTML = `<h2>Нийт ${cars.length} машин</h2>` + cars.map(car => car.createCarItem()).join();
+    carListContainer.innerHTML = `<h2>Нийт ${cars.length} машин</h2>` + 
+        cars
+            .map(carData => new Car(carData)) 
+            .map(car => car.createCarItem()) 
+            .join('');
 }

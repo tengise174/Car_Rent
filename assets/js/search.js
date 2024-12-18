@@ -1,10 +1,10 @@
-import { fetchCarsData, filterCars, renderCars } from './carModule.js';
+import { fetchCarsData, renderCars } from './carModule.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const cars = await fetchCarsData();
+    const filters =getQueryParams();
 
-    const filters = getQueryParams();
-    const filteredCars = filterCars(cars, filters);
+    const filteredCars = await fetchCarsData(filters);
+
     setDropdownValues(filters);
     renderCars(filteredCars);
     setListenerCar();
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filterButton = document.querySelector(".search-button");
     filterButton.addEventListener('click', (event) => {
         event.preventDefault();
-        handleSearch(cars);
+        handleSearch();
     });    
 });
 
@@ -39,7 +39,7 @@ function setDropdownValues(filters) {
     }
 }
 
-function handleSearch(cars) {
+function handleSearch() {
     const filters = {
         location: document.getElementById('location').value,
         make: document.getElementById('make').value,
@@ -60,9 +60,14 @@ function handleSearch(cars) {
     }
     window.history.pushState({}, '', `?${queryParams.toString()}`);
 
-    const filteredCars = filterCars(cars, filters);
-    renderCars(filteredCars);
-    setListenerCar();
+    fetchCarsData(filters)
+        .then(filteredCars => {
+            renderCars(filteredCars);
+            setListenerCar();
+        })
+        .catch(error => {
+            console.error("Error fetching filtered cars:", error);
+        });
 }
 
 function setListenerCar() {
