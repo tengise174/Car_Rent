@@ -11,6 +11,13 @@
             --dark-blue: #0056b3;
             --yellow: #ffeb3b;
         }
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #f9f9f9;
+            --input-bg: #1e1e1e;
+            --button-bg: #2a2a2a;
+            --button-hover-bg: #3d3d3d;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -22,12 +29,13 @@
             height: 100vh;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to right, #f0f4ff, #ffe39f);
+            background: linear-gradient(53deg, rgba(211,215,253,1) 0%, rgba(242,244,166,1) 99%);
+            color: var(--text-color);
         }
         .container {
             display: flex;
-            width: 800px;
-            height: 500px;
+            width: 80%;
+            height: 80%;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -52,7 +60,7 @@
         .left input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 20px;
+            margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
@@ -83,6 +91,10 @@
             text-decoration: none;
             margin-left: 5px;
         }
+        .links{
+            display: flex;
+            justify-content: space-between;
+        }
         .right {
             flex: 1;
             background-color: var(--dark-blue);
@@ -101,7 +113,7 @@
         }
         .right .logo img{
             border-radius: 50%;
-            width: auto;
+            width: 100%;
             height: auto;
         }
         .right .company-name {
@@ -129,24 +141,48 @@
             bottom: 50px;
             right: 50px;
         }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--button-bg);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--button-hover-bg);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .right {
+                display: none;
+            }
+        }
     </style>
 </head>
-<body>
+<body data-theme="light">
     <main class="container">
         <section class="left">
             <header>
                 <h2>Log In</h2>
             </header>
-            <form>
+            <form action="index.html" method="get">
                 <label for="username">Username or Mail</label><br>
-                <input type="text" id="username" placeholder="Username"><br>
+                <input type="text" id="username" placeholder="Username" autocomplete="username"><br>
                 <label for="password">Password</label><br>
                 <input type="password" id="password" placeholder="Password"><br>
                 <button type="submit">Log In</button><br>
             </form>
             <div class="links">
-                <a href="#">Forgot password?</a><br>
-                <span>Don't have an account? <a href="#">Sign Up</a></span>
+                <a href="#">Forgot password?</a>
+                <span><a href="#">Sign Up</a></span>
             </div>
         </section>
 
@@ -158,5 +194,15 @@
         </aside>
     </main>
 
+    <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', newTheme);
+        });
+    </script>
 </body>
 </html>

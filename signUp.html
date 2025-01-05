@@ -11,6 +11,13 @@
             --dark-blue: #0056b3;
             --yellow: #ffeb3b;
         }
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #f9f9f9;
+            --input-bg: #1e1e1e;
+            --button-bg: #2a2a2a;
+            --button-hover-bg: #3d3d3d;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -23,6 +30,7 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(to right, #f0f4ff, #ffe39f);
+            color: var(--text-color);
         }
         .container {
             display: flex;
@@ -128,10 +136,35 @@
             bottom: 50px;
             right: 50px;
         }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--button-bg);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle:hover {
+            background: var(--button-hover-bg);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left{
+                height: 100%;
+            }
+            .right {
+                display: none;
+            }
+        }
     </style>
 </head>
-<body>
-
+<body data-theme="light">
     <main class="container">
         <section class="left">
             <header>
@@ -139,11 +172,11 @@
             </header>
             <form>
                 <label for="name">Name</label><br>
-                <input type="text" id="name" placeholder="Enter your name"><br>
+                <input type="text" id="name" placeholder="Enter your name" autocomplete="name"><br>
                 <label for="email">Email</label><br>
-                <input type="email" id="email" placeholder="Enter your email"><br>
+                <input type="email" id="email" placeholder="Enter your email" autocomplete="email"><br>
                 <label for="username">Username</label><br>
-                <input type="text" id="username" placeholder="Enter your username"><br>
+                <input type="text" id="username" placeholder="Enter your username" autocomplete="username"><br>
                 <label for="password">Password</label><br>
                 <input type="password" id="password" placeholder="Create a password"><br>
                 <button type="submit">Create Account</button>
@@ -159,7 +192,16 @@
             <div class="circle2"></div>
         </section>
     </main>
+    <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
 
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', newTheme);
+        });
+    </script>
 </body>
 
 </html>
