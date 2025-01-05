@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         updateCarDetails(car);
     } catch (error) {
         document.getElementById('car-detail').innerHTML = '<p>Машин олдсонгүй.</p>';
+        console.log(error);
     }
 });
 
@@ -36,7 +37,7 @@ function updateCarDetails(car) {
 
     document.getElementById('car-description').textContent = car.desc;
     document.getElementById('extra-text').textContent = car.more_desc;
-    document.getElementById('fuel-consumption').textContent = `${car.fuel_consumption}`;
+    document.getElementById('fuel-consumption').textContent = `${car.fuelConsumption}`;
     document.getElementById('doors').textContent = `${car.doors}`;
     document.getElementById('seats').textContent = `${car.seats}`;
     document.getElementById('tires').textContent = car.tires;
