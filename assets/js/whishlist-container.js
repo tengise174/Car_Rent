@@ -41,11 +41,11 @@ class WishlistContainer extends HTMLElement {
                     }
                 .remove-btn {
                     width: 100%;
-                    background-color: #777;
+                    background-color: blue;
                     color: white;
                     border: none;
                     padding: 8px 16px;
-                    border-radius: 4px;
+                    border-radius: 16px;
                     cursor: pointer;
                     transition: background-color 0.3s ease;
                 }
@@ -55,11 +55,11 @@ class WishlistContainer extends HTMLElement {
 
                 .toggle-days-btn {
                     width: 40%;
-                    background-color: #777;
+                    background-color: blue;
                     color: white;
                     border: none;
                     padding: 8px 16px;
-                    border-radius: 4px;
+                    border-radius: 16px;
                     cursor: pointer;
                     transition: background-color 0.3s ease;
                     margin-bottom: 2rem;
