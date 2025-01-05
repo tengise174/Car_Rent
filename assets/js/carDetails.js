@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const cars = await response.json();
         const car = cars[0];
+        console.log('API Response:', cars);
         updateCarDetails(car);
     } catch (error) {
         document.getElementById('car-detail').innerHTML = '<p>Машин олдсонгүй.</p>';
