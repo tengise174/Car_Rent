@@ -1,3 +1,4 @@
+document.cookie = "__Host-name=value; Secure; Path=/; SameSite=None; Partitioned";
 import { fetchCarsData, renderCars } from './carModule.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
