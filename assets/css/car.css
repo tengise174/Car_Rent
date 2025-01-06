@@ -79,12 +79,10 @@ figure {
     align-items: center;
     padding-top: 50px;
     gap: var(--small-gap);
-    min-height: 300px; 
-    min-width: 100%;   
+    height: 400px; 
+    width: 100%;   
     box-sizing: border-box; 
     margin-top: 4rem;
-    min-height: 400px; 
-    width: 100%;
 }
 
 .car-specs h2 {
@@ -119,12 +117,14 @@ figure {
     padding: 5px 10px;
     background-color: var(--very-light);
     border-radius: var(--border-radius);
-    min-width: 80px;
+    width: 80px; 
+    height: 30px; 
 }
 
 .car-specs ul li i {
     margin-right: var(--small-gap);
 }
+
 
 .car-description {
     grid-area: car-description;
