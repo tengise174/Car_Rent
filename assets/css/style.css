@@ -118,7 +118,6 @@ input:focus {
     gap: 2rem;
     padding: 2rem 0;
     color: var(--text-color-light);
-    color: var(--text-color-light);
 }
 
 #about-us h2,
