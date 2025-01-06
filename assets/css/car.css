@@ -43,8 +43,7 @@ main {
     background-color: var(--card-bg-light);
 }
 #car-title{
-    padding-bottom: 2vh;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     align-self: center;
 }
 figure {
@@ -78,22 +77,25 @@ figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
     gap: var(--small-gap);
-    margin-top: 4rem;
     min-height: 300px; 
-    min-width: 100%;  
+    min-width: 100%;   
+    box-sizing: border-box; 
 }
 
 .car-specs h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;  
     color: var(--text-color-light);
-    padding-bottom: 20px;
+    margin: 0;
+    line-height: 1.4; 
 }
 
 .car-specs p {
-    padding-bottom: 15px;
     font-size: 1rem;
     color: #777;
+    line-height: 1; 
+    margin: 0; 
 }
 
 .car-specs ul {
@@ -103,6 +105,8 @@ figure {
     justify-content: center;
     gap: var(--small-gap);
     padding: 0;
+    width: 100%; 
+    min-height: 50px; 
 }
 
 .car-specs ul li {
@@ -112,6 +116,7 @@ figure {
     padding: 5px 10px;
     background-color: var(--very-light);
     border-radius: var(--border-radius);
+    min-width: 80px;
 }
 
 .car-specs ul li i {
