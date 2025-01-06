@@ -36,7 +36,7 @@ function updateCarDetails(car) {
     document.getElementById('small-image-2').src = car.image[2];
 
     document.getElementById('car-description').textContent = car.desc;
-    document.getElementById('extra-text').textContent = car.more_desc;
+    document.getElementById('extra-text').textContent = car.moreDesc;
     document.getElementById('fuel-consumption').textContent = `${car.fuelConsumption}`;
     document.getElementById('doors').textContent = `${car.doors}`;
     document.getElementById('seats').textContent = `${car.seats}`;
