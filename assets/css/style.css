@@ -235,8 +235,8 @@ input:focus {
 }
 
 .car-item img {
-    width: 6000px;
-    height: 3376px;
+    width: 450px;
+    height: 225px;
     object-fit: cover;
     border-radius: 10px  0 0 10px;
 }
