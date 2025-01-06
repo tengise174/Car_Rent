@@ -57,16 +57,16 @@ figure {
 
 .large-image {
     grid-area: large-image;
-    width: 800px;
-    height: 450px;
+    width: 420px;
+    height: 250px;
     border-radius: var(--border-radius);
     margin-top: var(--small-gap);
 }
 
 .small-image-1,
 .small-image-2 {
-    width: 400px;
-    height: 225px;
+    width: 220px;
+    height: 120px;
     border-radius: var(--border-radius);
     margin-top: var(--small-gap);
 }
