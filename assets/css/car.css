@@ -1,6 +1,7 @@
 :root {
     --font-family: Arial, sans-serif;
     --background-color-light: #f4f4f4;
+    --very-light: #fgfgfg;
     --background-color-dark: #333;
     --text-color-light: #000;
     --text-color-dark: #E0E0E0;
@@ -36,7 +37,7 @@ main {
     gap: var(--gap);
     width: 80%;
     margin: 0 auto;
-    padding: var(--gap);
+    padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     background-color: var(--card-bg-light);
@@ -102,8 +103,7 @@ figure {
     align-items: center;
     font-size: 1rem;
     padding: 5px 10px;
-    background-color: var(--background-color-light);
-    border: 1px solid #ddd;
+    background-color: var(--very-light);
     border-radius: var(--border-radius);
 }
 
@@ -152,7 +152,6 @@ figure {
     flex: 1;
     padding: 10px;
     color: var(--text-color-light);
-    border: 1px solid #ddd;
     border-radius: var(--border-radius);
 }
 
@@ -167,10 +166,9 @@ figure {
 
 .rental-period {
     flex: 1;
-    border: 1px solid #ddd;
     border-radius: var(--border-radius);
     margin-bottom: var(--gap);
-    padding: 10px;
+    padding: 10px 2rem 10px 10px;
 }
 
 .rental-period h3 {
