@@ -78,6 +78,8 @@ figure {
     flex-direction: column;
     gap: var(--small-gap);
     margin-top: 4rem;
+    min-height: 300px; 
+    min-width: 100%;  
 }
 
 .car-specs h2 {
