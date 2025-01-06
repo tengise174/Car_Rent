@@ -44,6 +44,8 @@ main {
 }
 #car-title{
     padding-bottom: 2vh;
+    font-size: 1.3rem;
+    align-self: center;
 }
 figure {
     grid-area: car-images;
@@ -59,7 +61,7 @@ figure {
 .large-image {
     grid-area: large-image;
     width: 420px;
-    height: 250px;
+    height: 300px;
     border-radius: var(--border-radius);
     margin-top: var(--small-gap);
 }
@@ -67,15 +69,15 @@ figure {
 .small-image-1,
 .small-image-2 {
     width: 220px;
-    height: 120px;
+    height: 145px;
     border-radius: var(--border-radius);
     margin-top: var(--small-gap);
 }
-
 .car-specs {
     grid-area: car-specs;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--small-gap);
     margin-top: 4rem;
     min-height: 300px; 
@@ -83,19 +85,22 @@ figure {
 }
 
 .car-specs h2 {
-    font-size: 1.8rem;
+    font-size: 1rem;
     color: var(--text-color-light);
-    margin-bottom: var(--small-gap);
+    padding-bottom: 20px;
 }
 
 .car-specs p {
-    font-size: 1.2rem;
+    padding-bottom: 15px;
+    font-size: 1rem;
     color: #777;
 }
 
 .car-specs ul {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: var(--small-gap);
     padding: 0;
 }
@@ -103,7 +108,7 @@ figure {
 .car-specs ul li {
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 5px 10px;
     background-color: var(--very-light);
     border-radius: var(--border-radius);
