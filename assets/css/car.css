@@ -79,15 +79,12 @@ figure {
     align-items: center;
     padding-top: 50px;
     gap: var(--small-gap);
-<<<<<<< Updated upstream
     min-height: 300px; 
     min-width: 100%;   
     box-sizing: border-box; 
-=======
     margin-top: 4rem;
     min-height: 400px; 
     width: 100%;
->>>>>>> Stashed changes
 }
 
 .car-specs h2 {
