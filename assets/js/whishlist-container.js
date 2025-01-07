@@ -40,7 +40,7 @@ class WishlistContainer extends HTMLElement {
                     border-radius: 16px;
                     }
                 .remove-btn {
-                    width: 100%;
+                    width: 10rem;
                     background-color: blue;
                     color: white;
                     border: none;
@@ -69,6 +69,13 @@ class WishlistContainer extends HTMLElement {
                         :host {
                             width: 80%;
                         }
+                        .remove-btn{
+                        width: 5rem
+                        }
+                        .car-item img{
+                        width:40%;
+                        height: auto;
+                        } 
                     }
 
             </style>
