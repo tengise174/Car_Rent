@@ -89,22 +89,25 @@ class OrderSummary extends HTMLElement {
     renderCarSummary(wishlist) {
         const carSummaryContainer = this.querySelector('#car-summary');
         carSummaryContainer.innerHTML = '';
-
+    
         let netTotal = 0;
         let carSelected = false;
-
+    
         wishlist.forEach(car => {
             if (car.isChecked) {
                 const startDate = new Date(car.startDate);
                 const endDate = new Date(car.endDate);
                 const dayDifference = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-                const carTotalPrice = car.price * dayDifference;
-
+    
+                // Deformat the formatted price (remove currency symbols and commas)
+                const carDailyRate = parseFloat(car.price.replace(/[^\d.-]/g, ''));
+                const carTotalPrice = carDailyRate * dayDifference;
+    
                 netTotal += carTotalPrice;
-
+    
                 const carItem = document.createElement('div');
                 carItem.classList.add('car-item');
-
+    
                 if (this.showCarTotal) {
                     carItem.innerHTML = `
                         <p><strong>Нэр: ${car.name}</strong></p>
@@ -112,18 +115,21 @@ class OrderSummary extends HTMLElement {
                         ${this.showDayDifference ? `<p><strong>Түрээслэх өдөр: ${dayDifference}</strong></p>` : ''}
                     `;
                 }
-
+    
                 carSummaryContainer.appendChild(carItem);
                 carSelected = true;
             }
         });
-
+    
         this._carSelected = carSelected;
-
+    
+        // Change border style based on car selection
         this.style.border = carSelected ? '2px solid #98c9ef' : '1px solid #ccc';
-
+    
+        // Update the total amount
         this.querySelector('#total').textContent = netTotal.toFixed(2);
     }
+    
 
         async handlePayment() {
             const totalAmount = this.querySelector('#total').textContent;

@@ -5,14 +5,35 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('car-detail').innerHTML = '<p>Машин олдсонгүй.</p>';
         return;
     }
+    const startDateInput = document.getElementById('start-date');
+    const endDateInput = document.getElementById('end-date');
+
     const startDate = urlParams.get('startDate');
     const endDate = urlParams.get('endDate');
+
     if (startDate) {
-        document.getElementById('start-date').value = startDate;
+        startDateInput.value = startDate;
     }
     if (endDate) {
-        document.getElementById('end-date').value = endDate;
+        endDateInput.value = endDate;
     }
+
+    // Add event listeners to validate dates
+    startDateInput.addEventListener('change', validateDates);
+    endDateInput.addEventListener('change', validateDates);
+
+    function validateDates() {
+        const startDateValue = new Date(startDateInput.value);
+        const endDateValue = new Date(endDateInput.value);
+
+        if (startDateInput.value && endDateInput.value) {
+            if (endDateValue <= startDateValue) {
+                alert("End date must be after the start date.");
+                endDateInput.value = ""; // Clear the invalid end date
+            }
+        }
+    }
+
     try {
         const response = await fetch(`http://localhost:3000/api/car?id=${carId}`);
         if (!response.ok) throw new Error('Car not found');
