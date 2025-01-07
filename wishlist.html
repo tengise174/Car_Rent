@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="./assets/css/header_footer.css">
     <link rel="stylesheet" href="./assets/css/wishlist.css">
-    <link rel="stylesheet" href="./assets/css/car_component.css">
+    <link rel="preload" as="style" href="./assets/css/car_component.css">
+    <link rel="preload" as="image" href="/assets/img/car-image-placeholder.jpg">
     <script type="module" src="./assets/js/whishlist-container.js"></script>
     <script type="module" src="./assets/js/order-summary.js"></script>
     <script type="module" src="./assets/js/GlobalState.js"></script>
@@ -80,7 +78,7 @@
                 </a>
             </li>
         </ul>
-        <img class="logo-img" src="./assets/img/logo.png" alt="logo">
+        <img class="logo-img" src="./assets/img/logo.png" alt="logo" loading="lazy">
         <p>Copyright &copy; 2024 CarRent, Inc</p>
         <ul>
             <li><a href="./privacy.html">Мэдээллийн хамгаалалт</a></li>
