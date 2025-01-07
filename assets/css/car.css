@@ -33,8 +33,7 @@ main {
     grid-template-areas:
         "car-images car-specs"
         "car-description car-description";
-    grid-template-columns: 2fr 1fr;
-    gap: var(--gap);
+    grid-template-columns: 2fr 2fr;
     width: 80%;
     margin: 0 auto;
     padding: 2rem;
@@ -73,16 +72,15 @@ figure {
     margin-top: var(--small-gap);
 }
 .car-specs {
-    grid-area: car-specs;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
     gap: var(--small-gap);
     height: 400px; 
     width: 100%;   
-    box-sizing: border-box; 
     margin-top: 4rem;
+    min-height: 300px;
+    min-width: 100%;
 }
 
 .car-specs h2 {
@@ -121,14 +119,8 @@ figure {
     height: 30px; 
 }
 
-.car-specs ul li i {
-    margin-right: var(--small-gap);
-}
-
-
 .car-description {
     grid-area: car-description;
-    margin-top: var(--gap);
 }
 
 .car-description h3 {
