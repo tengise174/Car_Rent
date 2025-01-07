@@ -37,7 +37,7 @@ function updateCarDetails(car) {
 
     document.getElementById('car-description').textContent = car.desc;
     document.getElementById('extra-text').textContent = car.moreDesc;
-    document.getElementById('fuel-consumption').textContent = `${car.fuelConsumption}`;
+    document.getElementById('fuel-consumption').textContent = `${car.fuel_consumption}`;
     document.getElementById('doors').textContent = `${car.doors}`;
     document.getElementById('seats').textContent = `${car.seats}`;
     document.getElementById('tires').textContent = car.tires;

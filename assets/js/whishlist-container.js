@@ -1,20 +1,20 @@
-import globalState from './GlobalState.js';
+import globalState from "./GlobalState.js";
 
 class WishlistContainer extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback() {
-        this.render();
-        this.renderWishlist();
-        globalState.addListener(this.update.bind(this));
-    }
+  connectedCallback() {
+    this.render();
+    this.renderWishlist();
+    globalState.addListener(this.update.bind(this));
+  }
 
-    render() {
-        const template = document.createElement('template');
-        template.innerHTML = `
+  render() {
+    const template = document.createElement("template");
+    template.innerHTML = `
             <style>
                 :host {
                     width: 50%;
@@ -35,7 +35,7 @@ class WishlistContainer extends HTMLElement {
                     }
                 .car-item img { 
                     width: 150px; 
-                    height: 150px;
+                    height: auto;
                     margin-right: 20px; 
                     border-radius: 16px;
                     }
@@ -78,63 +78,75 @@ class WishlistContainer extends HTMLElement {
                 <slot name="no-items-message">No cars in your Wishlist.</slot>
             </div>
         `;
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-        this.shadowRoot.querySelector('.toggle-days-btn').addEventListener('click', () => {
-            this.dispatchEvent(new CustomEvent('toggle-days', { 
-                bubbles: true, 
-                composed: true 
-            }));
+    this.shadowRoot
+      .querySelector(".toggle-days-btn")
+      .addEventListener("click", () => {
+        this.dispatchEvent(
+          new CustomEvent("toggle-days", {
+            bubbles: true,
+            composed: true,
+          })
+        );
+      });
+  }
+
+  renderWishlist() {
+    const container = this.shadowRoot.querySelector("#wishlist-container");
+    container.innerHTML = "";
+
+    if (globalState.wishlist.length === 0) {
+      container.innerHTML =
+        '<p><slot name="no-items-message">No cars in your Wishlist.</slot></p>';
+      return;
+    }
+
+    globalState.wishlist.forEach((car, index) => {
+      const carItem = document.createElement("div");
+      carItem.classList.add("car-item");
+
+      const startDate = new Date(car.startDate).toLocaleDateString();
+      const endDate = new Date(car.endDate).toLocaleDateString();
+
+      carItem.innerHTML = `
+      <div>
+          <label for="checkbox-${index}">
+              <input type="checkbox" id="checkbox-${index}" data-index="${index}" ${car.isChecked ? 'checked' : ''}>
+              .
+          </label>
+      </div>
+      <img src="${car.image}" alt="${car.name}">
+      <div>
+          <p style="font-size: 18px; font-weight: bold;">${car.name}</p>
+          <p>${car.price}₮ / өдөр</p>
+          <div>
+              <p>Эхлэх: ${startDate}</p>
+              <p>Дуусах: ${endDate}</p>
+          </div>
+          <button data-index="${index}" class="remove-btn">хасах</button>
+      </div>
+  `;
+
+      carItem
+        .querySelector('input[type="checkbox"]')
+        .addEventListener("change", (e) => {
+          const isChecked = e.target.checked;
+          globalState.updateCarSelection(index, isChecked);
         });
-    }
 
-    renderWishlist() {
-        const container = this.shadowRoot.querySelector('#wishlist-container');
-        container.innerHTML = '';
-
-        if (globalState.wishlist.length === 0) {
-            container.innerHTML = '<p><slot name="no-items-message">No cars in your Wishlist.</slot></p>';
-            return;
-        }
-
-        globalState.wishlist.forEach((car, index) => {
-            const carItem = document.createElement('div');
-            carItem.classList.add('car-item');
-
-            const startDate = new Date(car.startDate).toLocaleDateString();
-            const endDate = new Date(car.endDate).toLocaleDateString();
-
-            carItem.innerHTML = `
-                <input type="checkbox" data-index="${index}" ${car.isChecked ? 'checked' : ''}>
-                <img src="${car.image}" alt="${car.name}">
-                <div>
-                    <h3>${car.name}</h3>
-                    <p>${car.price}₮ /өдөр</p>
-                    <div>
-                        <p>Эхлэх: ${startDate}</p>
-                        <p>Дуусах: ${endDate}</p>
-                    </div>
-                    <button data-index="${index}" class="remove-btn">хасах</button>
-                </div>
-            `;
-
-            carItem.querySelector('input[type="checkbox"]').addEventListener('change', (e) => {
-                const isChecked = e.target.checked;
-                globalState.updateCarSelection(index, isChecked);
-            });
-
-            carItem.querySelector('.remove-btn').addEventListener('click', (e) => {
-                const index = e.target.getAttribute('data-index');
-                globalState.removeCar(index);
-            });
-
-            container.appendChild(carItem);
+        carItem.querySelector('input[type="checkbox"]').addEventListener('change', (e) => {
+            const isChecked = e.target.checked;
+            globalState.updateCarSelection(index, isChecked);
         });
-    }
 
-    update(wishlist) {
-        this.renderWishlist();
-    }
+      container.appendChild(carItem);
+    });
+  }
+
+  update(wishlist) {
+    this.renderWishlist();
+  }
 }
 
-customElements.define('wishlist-container', WishlistContainer);
+customElements.define("wishlist-container", WishlistContainer);
