@@ -115,7 +115,7 @@ class WishlistContainer extends HTMLElement {
                 <input type="checkbox" data-index="${index}" ${car.isChecked ? 'checked' : ''}>
                 <img src="${car.image}" alt="${car.name}">
                 <div>
-                    <h3>${car.name}</h3>
+                    <h2>${car.name}</h2>
                     <p>${car.price}₮ /өдөр</p>
                     <div>
                         <p>Эхлэх: ${startDate}</p>
