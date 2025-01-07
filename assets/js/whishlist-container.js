@@ -112,23 +112,28 @@ class WishlistContainer extends HTMLElement {
             const endDate = new Date(car.endDate).toLocaleDateString();
 
             carItem.innerHTML = `
-                <input type="checkbox" data-index="${index}" ${car.isChecked ? 'checked' : ''}>
-                <img src="${car.image}" alt="${car.name}">
+            <div>
+                <label for="checkbox-${index}">
+                    <input type="checkbox" id="checkbox-${index}" data-index="${index}" ${car.isChecked ? 'checked' : ''}>
+                    .
+                </label>
+            </div>
+            <img src="${car.image}" alt="${car.name}">
+            <div>
+                <p style="font-size: 18px; font-weight: bold;">${car.name}</p>
+                <p>${car.price}₮ / өдөр</p>
                 <div>
-                    <h2>${car.name}</h2>
-                    <p>${car.price}₮ /өдөр</p>
-                    <div>
-                        <p>Эхлэх: ${startDate}</p>
-                        <p>Дуусах: ${endDate}</p>
-                    </div>
-                    <button data-index="${index}" class="remove-btn">хасах</button>
+                    <p>Эхлэх: ${startDate}</p>
+                    <p>Дуусах: ${endDate}</p>
                 </div>
-            `;
+                <button data-index="${index}" class="remove-btn">хасах</button>
+            </div>
+        `;
 
-            carItem.querySelector('input[type="checkbox"]').addEventListener('change', (e) => {
-                const isChecked = e.target.checked;
-                globalState.updateCarSelection(index, isChecked);
-            });
+        carItem.querySelector('input[type="checkbox"]').addEventListener('change', (e) => {
+            const isChecked = e.target.checked;
+            globalState.updateCarSelection(index, isChecked);
+        });
 
             carItem.querySelector('.remove-btn').addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');

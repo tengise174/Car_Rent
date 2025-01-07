@@ -28,13 +28,12 @@ export class Car {
     createCarItem() {
         return `
             <article class="car-item" data-id=${this.id}>
-                <img src="${this.image[0]}" alt="${this.make} ${this.model} ${this.year}">
+                <img src="/assets/img/car-image-placeholder.webp" alt="${this.make} ${this.model} ${this.year} width="350" height="175"">
                 <div>
                     <h3>${this.make} ${this.model} ${this.year}</h3>
                     <p>(${this.trips} аялал)</p>
                     <p>Үнэлгээ: ${this.rating} ☆</p>
                     <p>₮${this.dailyRate}/day</p>
-                    <button aria-label="Heart"><i class="fa-regular fa-heart"></i></button>
                 </div>
             </article>
         `;
