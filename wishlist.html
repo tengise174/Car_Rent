@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="./assets/css/header_footer.css">
     <link rel="stylesheet" href="./assets/css/wishlist.css">
     <link rel="stylesheet" href="./assets/css/car_component.css">
@@ -23,7 +25,7 @@
                 <li><a href="./index.html">Home</a></li>
                 <li class="active-page"><a href="./wishlist.html">Shopping Cart</a></li>
                 <li class="user-menu">
-                    <a href="./login.html" id="user-dropdown-toggle">User <i class="fas fa-user"></i></a>
+                    <a href="./login.html" id="user-dropdown-toggle">User</a>
                     <div class="dropdown-content" id="user-dropdown">
                         <a href="./login.html">Login</a>
                         <a href="./signup.html">Signup</a>
@@ -48,10 +50,35 @@
 
         <footer>
         <ul>
-            <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+            <li>
+                            <!-- Facebook Icon -->
+                <a href="https://facebook.com" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.675 0H1.325C.595 0 0 .594 0 1.326v21.348C0 23.406.594 24 1.325 24h11.483v-9.294H9.847v-3.622h2.961V8.413c0-2.924 1.785-4.514 4.392-4.514 1.247 0 2.316.092 2.629.134v3.045l-1.804.001c-1.414 0-1.688.673-1.688 1.657v2.174h3.375l-.441 3.622h-2.934V24h5.745C23.405 24 24 23.406 24 22.674V1.326C24 .594 23.406 0 22.675 0z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.34 3.608 1.316.975.975 1.253 2.242 1.316 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.34 2.633-1.316 3.608-.975.975-2.242 1.253-3.608 1.316-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.34-3.608-1.316-.975-.975-1.253-2.242-1.316-3.608C2.175 15.634 2.163 15.254 2.163 12s.012-3.584.07-4.85c.062-1.366.34-2.633 1.316-3.608C4.524 2.503 5.79 2.225 7.156 2.163c1.266-.058 1.646-.07 4.85-.07m0-2.163C8.725 0 8.332.014 7.052.07 5.765.127 4.676.455 3.802 1.33c-.874.874-1.202 1.963-1.259 3.25C2.014 6.583 2 6.975 2 12s.014 5.417.07 6.698c.057 1.287.385 2.376 1.259 3.25.874.874 1.963 1.202 3.25 1.259C8.332 23.986 8.725 24 12 24s3.668-.014 4.948-.07c1.287-.057 2.376-.385 3.25-1.259.874-.874 1.202-1.963 1.259-3.25.056-1.281.07-1.673.07-6.698s-.014-5.417-.07-6.698c-.057-1.287-.385-2.376-1.259-3.25-.874-.874-1.963-1.202-3.25-1.259C15.668.014 15.275 0 12 0zm0 5.838A6.162 6.162 0 105.838 12 6.162 6.162 0 0012 5.838m0-2.163A8.325 8.325 0 113.675 12 8.325 8.325 0 0112 3.675zM18.406 4.594A1.44 1.44 0 1116.97 6.03a1.44 1.44 0 011.437-1.436z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.23 0H1.77C.792 0 0 .774 0 1.729v20.542C0 23.225.792 24 1.77 24h20.46C23.208 24 24 23.225 24 22.271V1.729C24 .774 23.208 0 22.23 0zM7.119 20.452H3.59V9h3.528v11.452zM5.354 7.633c-1.129 0-1.845-.745-1.845-1.678 0-.948.729-1.678 1.884-1.678 1.154 0 1.846.73 1.864 1.678 0 .933-.71 1.678-1.883 1.678zm15.1 12.819h-3.529v-5.602c0-1.409-.503-2.37-1.77-2.37-.964 0-1.537.646-1.79 1.269-.093.226-.116.542-.116.857v5.845h-3.529c.045-9.488 0-10.452 0-10.452h3.529v1.582c.467-.72 1.2-1.745 3.114-1.745 2.273 0 3.987 1.489 3.987 4.688v6.021z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.724-.951.555-2.005.959-3.127 1.184-.897-.959-2.178-1.559-3.594-1.559-2.717 0-4.924 2.204-4.924 4.917 0 .39.045.765.13 1.124-4.09-.205-7.719-2.164-10.148-5.144-.426.729-.666 1.561-.666 2.475 0 1.71.87 3.223 2.188 4.104-.807-.026-1.566-.247-2.228-.616v.061c0 2.386 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.317 0-.626-.03-.927-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.104-6.102 2.104-.396 0-.788-.023-1.174-.067 2.179 1.393 4.768 2.206 7.548 2.206 9.054 0 14.002-7.496 14.002-13.986 0-.209-.005-.42-.014-.63.961-.695 1.8-1.562 2.46-2.548l-.047-.02z"/>
+                    </svg>
+                </a>
+            </li>
         </ul>
         <img class="logo-img" src="./assets/img/logo.png" alt="logo">
         <p>Copyright &copy; 2024 CarRent, Inc</p>

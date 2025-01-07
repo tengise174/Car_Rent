@@ -34,7 +34,7 @@ class WishlistContainer extends HTMLElement {
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     }
                 .car-item img { 
-                    width: 150px; 
+                    width: 200px; 
                     height: 150px;
                     margin-right: 20px; 
                     border-radius: 16px;
